@@ -166,6 +166,35 @@ async function init(){
     document.getElementById("chart").innerHTML =
       '<div class="empty">아직 data/prices.json 이 없어요. GitHub Actions 탭에서 "Fetch daily prices" 워크플로를 한 번 수동 실행(Run workflow)하면 생성됩니다.</div>';
   }
+
+  /* 리포트 동기화로 생성된 catalysts.json 자동 로드 (source="report") */
+  try{
+    const cr = await fetch("data/catalysts.json", {cache:"no-store"});
+    if(cr.ok){
+      const cj = await cr.json();
+      const auto = (cj.catalysts || []).map(c => ({
+        id: "auto-" + (c.ticker+"|"+c.title+"|"+c.date).replace(/\s+/g,""),
+        ticker: (c.ticker||"").toUpperCase(),
+        date: c.date || "",
+        title: c.title || "",
+        stage: STAGES[c.stage] ? c.stage : "other",
+        note: c.note || "",
+        origin: "report"
+      }));
+      /* 직접 추가분(store)은 보존, 자동분은 id로 덮어쓰기 병합 */
+      const manual = store.catalysts.filter(c => !String(c.id).startsWith("auto-"));
+      const seen = new Set();
+      store.catalysts = [...auto, ...manual].filter(c=>{
+        if(seen.has(c.id)) return false; seen.add(c.id); return true;
+      });
+      const upd = (cj.updated||"").replace("T"," ").slice(0,16);
+      if(upd){
+        const el = document.getElementById("updated");
+        el.textContent += "  ·  catalyst 동기화: " + upd;
+      }
+    }
+  }catch{ /* catalysts.json 없으면 조용히 패스 — 수동 추가만 사용 */ }
+
   const syms = prices ? Object.keys(prices.series) : [];
   ticker = syms[0] || null;
   renderTickers(syms);
@@ -334,20 +363,23 @@ function renderList(){
   cats.forEach(c=>{
     const st = STAGES[c.stage]||STAGES.other;
     const rx = reaction(prices && prices.series[c.ticker], c.date);
+    const isAuto = c.origin === "report";
     const row = document.createElement("div");
     row.className = "item";
     let rxHtml = "";
     if(rx) rxHtml = `<span class="rx" style="color:${pctColor(rx.d1)}">D+1 ${fmtPct(rx.d1)}</span>
                      <span class="rx" style="color:${pctColor(rx.d5)}">D+5 ${fmtPct(rx.d5)}</span>`;
+    const badge = isAuto
+      ? `<span class="rx" style="color:var(--teal);border-color:var(--teal)">📄 리포트</span>` : "";
     row.innerHTML = `
       <i class="dot" style="width:${st.r*2}px;height:${st.r*2}px;background:${st.color};margin-top:4px;flex-shrink:0"></i>
       <div style="flex:1;min-width:0">
         <div style="font-size:13px;font-weight:700">${c.title}</div>
         <div class="muted" style="font-size:11px;font-family:var(--mono);margin-top:2px">${c.date||"날짜 미정"} · ${st.label}</div>
         ${c.note?`<div class="muted" style="font-size:12px;margin-top:3px">${c.note}</div>`:""}
-        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">${rxHtml}</div>
+        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">${badge}${rxHtml}</div>
       </div>
-      <button class="btn small danger" data-del="${c.id}">✕</button>`;
+      <button class="btn small danger" data-del="${c.id}" title="${isAuto?'리포트 동기화 항목 — 숨기면 다음 동기화 때 다시 나타날 수 있어요':'삭제'}">✕</button>`;
     row.querySelector("[data-del]").onclick = ()=>{
       store.catalysts = store.catalysts.filter(k=>k.id!==c.id); save(); renderTickers(Object.keys(prices?prices.series:{})); renderAll();
     };
