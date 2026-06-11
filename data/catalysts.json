@@ -1,0 +1,599 @@
+{
+  "updated": "2026-06-12T00:00:00",
+  "catalysts": [
+    {
+      "ticker": "NTLA",
+      "date": "2026-04-27",
+      "title": "Lonvo-z HAELO HAE in vivo CRISPR Phase 3 topline",
+      "stage": "topline",
+      "note": "세계 첫 in vivo CRISPR 3상 HAELO 탑라인이 1차·주요 2차 지표를 충족했다.",
+      "origin": "report",
+      "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "FBIO",
+      "date": "2026-05-14",
+      "title": "ZYCUBO Menkes disease FDA approval",
+      "stage": "regulatory",
+      "note": "Cyprium의 ZYCUBO가 멘케스병 최초 치료제로 FDA 승인됐다.",
+      "origin": "report",
+      "source": "20260531_Report.md"
+    },
+    {
+      "ticker": "REGN",
+      "date": "2026-05-15",
+      "title": "Fianlimab + Libtayo melanoma trial failure",
+      "stage": "topline",
+      "note": "fianlimab+Libtayo 병용이 전이성 멜라노마에서 키트루다 대비 PFS 우월성 입증에 실패했다.",
+      "origin": "report",
+      "source": "20260601_Report.md"
+    },
+    {
+      "ticker": "AZN",
+      "date": "2026-05-18",
+      "title": "Baxdrostat (Baxfendy) hypertension FDA approval",
+      "stage": "regulatory",
+      "note": "최초의 알도스테론 합성효소 억제제 baxdrostat이 고혈압 병용으로 FDA 승인됐다.",
+      "origin": "report",
+      "source": "20260530_Report_v2.md"
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-05-21",
+      "title": "Retatrutide TRIUMPH-1 obesity topline",
+      "stage": "topline",
+      "note": "삼중작용제 retatrutide TRIUMPH-1 3상 탑라인이 80주 평균 28.3% 감량을 보였다.",
+      "origin": "report",
+      "source": "20260531_Report.md"
+    },
+    {
+      "ticker": "GILD",
+      "date": "2026-05-22",
+      "title": "Hepcludex (bulevirtide) chronic HDV approval",
+      "stage": "regulatory",
+      "note": "Hepcludex가 미국 최초의 만성 D형 간염 치료제로 가속승인됐다.",
+      "origin": "report",
+      "source": "20260530_Report.md"
+    },
+    {
+      "ticker": "MRK",
+      "date": "2026-05-29",
+      "title": "Calderasib (MK-1084) KRAS G12C NSCLC Breakthrough Therapy",
+      "stage": "regulatory",
+      "note": "calderasib이 1차 KRAS G12C 변이 NSCLC에서 FDA 혁신치료제로 지정됐다.",
+      "origin": "report",
+      "source": "20260530_Report_v2.md"
+    },
+    {
+      "ticker": "REPL",
+      "date": "2026-05-29",
+      "title": "RP1 melanoma BLA resubmission FDA agreement",
+      "stage": "regulatory",
+      "note": "FDA와 RP1+니볼루맙 BLA 재제출·우선심사 경로에 합의하며 주가가 급등했다.",
+      "origin": "report",
+      "source": "20260602_Report.md"
+    },
+    {
+      "ticker": "BNTX",
+      "date": "2026-05-30",
+      "title": "Pumitamig (BNT327) ROSETTA Lung-02 NSCLC ASCO",
+      "stage": "conference",
+      "note": "ROSETTA Lung-02 1차 NSCLC 인터림 데이터가 ASCO에서 발표됐다.",
+      "origin": "report",
+      "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "MRK",
+      "date": "2026-05-30",
+      "title": "Sac-TMT + Keytruda 1L NSCLC ASCO oral",
+      "stage": "conference",
+      "note": "sac-TMT 콤보의 1차 NSCLC 3상 데이터가 ASCO 본세션에서 발표됐다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "ONCY",
+      "date": "2026-05-30",
+      "title": "Pelareorep GOBLET/AWARE-1 pancreatic TIL data ASCO",
+      "stage": "conference",
+      "note": "pelareorep의 KRAS 특이 TIL 클론 확장 데이터가 ASCO에서 공개됐다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "JNJ",
+      "date": "2026-05-31",
+      "title": "Apalutamide PROTEUS prostate cancer ASCO Plenary",
+      "stage": "conference",
+      "note": "apalutamide+ADT 주술기 요법 PROTEUS 3상이 ASCO 플레너리에서 발표됐다.",
+      "origin": "report",
+      "source": "20260530_Report_v2.md"
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-05-31",
+      "title": "KLN-1010 in vivo BCMA CAR-T multiple myeloma Phase 1 ASCO",
+      "stage": "topline",
+      "note": "생체내 BCMA CAR-T KLN-1010이 다발골수종 1상에서 ORR 100%를 보였다.",
+      "origin": "report",
+      "source": "20260606_Report.md"
+    },
+    {
+      "ticker": "RVMD",
+      "date": "2026-05-31",
+      "title": "Daraxonrasib RASolute 302 PDAC OS ASCO Plenary",
+      "stage": "conference",
+      "note": "daraxonrasib 췌장암 3상 RASolute 302가 ASCO 플레너리에서 OS를 약 2배로 늘린 결과를 공개했다.",
+      "origin": "report",
+      "source": "20260528_Report.md"
+    },
+    {
+      "ticker": "SMMT",
+      "date": "2026-05-31",
+      "title": "Ivonescimab HARMONi-6 OS ASCO Plenary",
+      "stage": "conference",
+      "note": "ivonescimab 편평 NSCLC HARMONi-6 OS 데이터가 ASCO 플레너리에서 첫 공개됐다.",
+      "origin": "report",
+      "source": "20260522_Report.md"
+    },
+    {
+      "ticker": "ABVX",
+      "date": "2026-06-01",
+      "title": "Obefazimod ABTECT ulcerative colitis maintenance Phase 3 topline",
+      "stage": "topline",
+      "note": "obefazimod 궤양성대장염 유지 3상 탑라인이 강력한 효능을 보였으나 안전성 신호로 주가가 급변동했다.",
+      "origin": "report",
+      "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "LEGN",
+      "date": "2026-06-01",
+      "title": "LB2102 DLL3 CAR-T solid tumor Phase 1 ASCO data",
+      "stage": "topline",
+      "note": "DLL3 표적 CAR-T LB2102 Phase 1 데이터 발표 직후 주가가 약 20% 급등했다.",
+      "origin": "report",
+      "source": "20260604_Report.md"
+    },
+    {
+      "ticker": "SGIOY",
+      "date": "2026-06-01",
+      "title": "Ensitrelvir (Xocova) COVID-19 post-exposure prophylaxis approval",
+      "stage": "regulatory",
+      "note": "엔시트렐비르가 최초의 경구 코로나 노출후예방 옵션으로 FDA 승인됐다.",
+      "origin": "report",
+      "source": "20260605_Report.md"
+    },
+    {
+      "ticker": "AZN",
+      "date": "2026-06-02",
+      "title": "Camizestrant SERENA-6 ctDNA/PFS2 ASCO data",
+      "stage": "conference",
+      "note": "경구 SERD camizestrant의 SERENA-6 ctDNA 청소율·PFS2 데이터가 ASCO에서 공개됐다.",
+      "origin": "report",
+      "source": "20260530_Report.md"
+    },
+    {
+      "ticker": "BMY",
+      "date": "2026-06-02",
+      "title": "Iza-bren (BL-B01D1) TNBC Phase 3 ASCO oral",
+      "stage": "conference",
+      "note": "EGFR×HER3 이중특이 ADC iza-bren이 전치료 TNBC 3상에서 PFS·OS를 충족하고 ASCO에서 발표됐다.",
+      "origin": "report",
+      "source": "20260529_Report_v2.md"
+    },
+    {
+      "ticker": "CELC",
+      "date": "2026-06-02",
+      "title": "Gedatolisib VIKTORIA-1 PIK3CA-mutant ASCO LBA",
+      "stage": "conference",
+      "note": "gedatolisib VIKTORIA-1 변이형 코호트 상세 데이터가 ASCO LBA 구두세션에서 공개됐다.",
+      "origin": "report",
+      "source": "20260601_Report_v2.md"
+    },
+    {
+      "ticker": "CRDF",
+      "date": "2026-06-02",
+      "title": "Onvansertib RAS-mutant mCRC Phase 2 ASCO data",
+      "stage": "topline",
+      "note": "onvansertib 1차 RAS 변이 대장암 2상 양성 결과에도 주가가 약 22% 하락했다.",
+      "origin": "report",
+      "source": "20260605_Report_v2.md"
+    },
+    {
+      "ticker": "BIIB",
+      "date": "2026-06-04",
+      "title": "Salanersen SMA Breakthrough Therapy designation",
+      "stage": "regulatory",
+      "note": "차세대 SMA ASO 살라너센이 FDA 혁신치료제로 지정됐다.",
+      "origin": "report",
+      "source": "20260605_Report.md"
+    },
+    {
+      "ticker": "TAK",
+      "date": "2026-06-04",
+      "title": "IBI343 CLDN18.2 ADC gastric cancer Phase 3 primary endpoint",
+      "stage": "topline",
+      "note": "세계 첫 CLDN18.2 ADC IBI343이 진행성 위암 3상 1차 지표를 충족했다.",
+      "origin": "report",
+      "source": "20260605_Report.md"
+    },
+    {
+      "ticker": "BCDA",
+      "date": "2026-06-05",
+      "title": "CardiAMP Heart Failure II FDA PMA-supportive meeting minutes",
+      "stage": "regulatory",
+      "note": "BioCardia가 CardiAMP HF II 임상이 PMA를 지지할 수 있다는 FDA 미팅 미닛을 확보했다.",
+      "origin": "report",
+      "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-06-05",
+      "title": "Retatrutide TRIUMPH-1 / orforglipron ADA presentation",
+      "stage": "conference",
+      "note": "ADA 2026에서 retatrutide TRIUMPH-1과 오포글리프론 전체 데이터가 발표됐다.",
+      "origin": "report",
+      "source": "20260603_Report.md"
+    },
+    {
+      "ticker": "BMEA",
+      "date": "2026-06-07",
+      "title": "Icovamenib COVALENT-112 type 1 diabetes Phase 2 ADA data",
+      "stage": "conference",
+      "note": "메닌 억제제 icovamenib의 52주 C-펩타이드 데이터가 ADA에서 공개됐다.",
+      "origin": "report",
+      "source": "20260606_Report.md"
+    },
+    {
+      "ticker": "NVO",
+      "date": "2026-06-07",
+      "title": "Amycretin Phase 2b type 2 diabetes data ADA",
+      "stage": "conference",
+      "note": "단분자 GLP-1/아밀린 작용제 amycretin의 Phase 2b T2D 데이터가 ADA에서 발표됐다.",
+      "origin": "report",
+      "source": "20260605_Report_v2.md"
+    },
+    {
+      "ticker": "NVO",
+      "date": "2026-06-07",
+      "title": "CagriSema R&D investor event",
+      "stage": "conference",
+      "note": "카그리세마 관련 추가 적응증·심혈관 데이터를 다루는 R&D 인베스터 이벤트가 열렸다.",
+      "origin": "report",
+      "source": "20260606_Report.md"
+    },
+    {
+      "ticker": "LEGN",
+      "date": "2026-06-11",
+      "title": "LB2501 in vivo CAR-T NHL Phase 1 EHA late-breaking data",
+      "stage": "conference",
+      "note": "in vivo CAR-T LB2501의 NHL 1상 전체 데이터가 EHA 2026에서 late-breaking 발표된다.",
+      "origin": "report",
+      "source": "20260609_Report.md"
+    },
+    {
+      "ticker": "NTLA",
+      "date": "2026-06-12",
+      "title": "Lonvo-z HAE additional Phase 3 data EAACI",
+      "stage": "conference",
+      "note": "EAACI에서 lonvo-z의 추가 3상 데이터가 발표될 예정이다.",
+      "origin": "report",
+      "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "INCY",
+      "date": "2026-06-15",
+      "title": "Tafasitamab frontMIND DLBCL sBLA submission",
+      "stage": "regulatory",
+      "note": "frontMIND 3상 기반 tafasitamab 1차 DLBCL sBLA가 2026 상반기 제출 예정이다.",
+      "origin": "report",
+      "source": "20260601_Report.md"
+    },
+    {
+      "ticker": "QURE",
+      "date": "2026-06-15",
+      "title": "AMT-130 Huntington FDA Type B meeting",
+      "stage": "regulatory",
+      "note": "AMT-130 헌팅턴 유전자치료의 Phase 3 설계를 협의할 FDA Type B 미팅이 2분기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260520_Report.md"
+    },
+    {
+      "ticker": "SGMO",
+      "date": "2026-06-15",
+      "title": "ST-920 Fabry disease rolling BLA submission",
+      "stage": "regulatory",
+      "note": "Fabry병 유전자치료 ST-920의 가속승인용 롤링 BLA가 2분기 제출 목표다.",
+      "origin": "report",
+      "source": "20260604_Report.md"
+    },
+    {
+      "ticker": "QURE",
+      "date": "2026-06-18",
+      "title": "AMT-260 refractory temporal lobe epilepsy first cohort data",
+      "stage": "topline",
+      "note": "AMT-260 난치성 측두엽 뇌전증 첫 코호트 데이터가 공개될 예정이다.",
+      "origin": "report",
+      "source": "20260604_Report.md"
+    },
+    {
+      "ticker": "ACHV",
+      "date": "2026-06-20",
+      "title": "Cytisinicline smoking cessation PDUFA",
+      "stage": "regulatory",
+      "note": "약 20년 만의 신규 금연 치료제 cytisinicline의 PDUFA가 예정돼 있다.",
+      "origin": "report",
+      "source": "20260605_Report_v2.md"
+    },
+    {
+      "ticker": "IONS",
+      "date": "2026-06-30",
+      "title": "Olezarsen (Tryngolza) severe hypertriglyceridemia label expansion decision",
+      "stage": "regulatory",
+      "note": "olezarsen의 중증 고중성지방혈증 적응증 확장 FDA 결정 기한이다.",
+      "origin": "report",
+      "source": "20260605_Report_v2.md"
+    },
+    {
+      "ticker": "NVO",
+      "date": "2026-07-01",
+      "title": "Medicare Part D obesity coverage pilot start",
+      "stage": "regulatory",
+      "note": "Medicare Part D 비만약 커버리지 파일럿이 개시된다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "VERA",
+      "date": "2026-07-07",
+      "title": "Atacicept IgA nephropathy PDUFA",
+      "stage": "regulatory",
+      "note": "아타시셉트 IgA신증 가속승인 BLA의 우선심사 PDUFA가 임박했다.",
+      "origin": "report",
+      "source": "20260528_Report.md"
+    },
+    {
+      "ticker": "BIIB",
+      "date": "2026-07-12",
+      "title": "Diranersen (BIIB080) CELIA Phase 2 full data AAIC",
+      "stage": "conference",
+      "note": "7월 AAIC에서 diranersen CELIA Phase 2 풀데이터가 공개된다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "CELC",
+      "date": "2026-07-17",
+      "title": "Gedatolisib PIK3CA wild-type cohort NDA PDUFA",
+      "stage": "regulatory",
+      "note": "gedatolisib 야생형 코호트 NDA의 우선심사 PDUFA가 예정돼 있다.",
+      "origin": "report",
+      "source": "20260601_Report_v2.md"
+    },
+    {
+      "ticker": "BIIB",
+      "date": "2026-08-24",
+      "title": "Leqembi Iqlik SC starting dose PDUFA",
+      "stage": "regulatory",
+      "note": "Leqembi 피하주사 개시용량 PDUFA가 3개월 연장돼 예정돼 있다.",
+      "origin": "report",
+      "source": "20260521_Report.md"
+    },
+    {
+      "ticker": "BNTX",
+      "date": "2026-09-15",
+      "title": "Pumitamig global Phase 3 first patient enrolled",
+      "stage": "regulatory",
+      "note": "pumitamig 글로벌 Phase 3 첫 환자 등록이 3분기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "GPCR",
+      "date": "2026-09-15",
+      "title": "Aleniglipron obesity Phase 3 ACCESS program start",
+      "stage": "regulatory",
+      "note": "경구 GLP-1 aleniglipron의 비만 Phase 3 ACCESS 프로그램이 3분기 개시 예정이다.",
+      "origin": "report",
+      "source": "20260608_Report.md"
+    },
+    {
+      "ticker": "GPCR",
+      "date": "2026-09-15",
+      "title": "ACCG-2671 oral amylin agonist Phase 1 data",
+      "stage": "topline",
+      "note": "경구 아밀린 작용제 ACCG-2671의 Phase 1 초기 데이터가 3분기 공개 예정이다.",
+      "origin": "report",
+      "source": "20260608_Report.md"
+    },
+    {
+      "ticker": "GSK",
+      "date": "2026-09-15",
+      "title": "Bepirovirsen chronic HBV FDA decision",
+      "stage": "regulatory",
+      "note": "bepirovirsen 만성 B형 간염의 FDA 허가 결정이 3분기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260529_Report.md"
+    },
+    {
+      "ticker": "IONS",
+      "date": "2026-09-15",
+      "title": "Bepirovirsen chronic HBV FDA decision (licensor royalty)",
+      "stage": "regulatory",
+      "note": "원천사 IONS 로열티에 영향을 줄 bepirovirsen FDA 결정이 3분기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260529_Report.md"
+    },
+    {
+      "ticker": "NVO",
+      "date": "2026-09-15",
+      "title": "Wegovy 7.2mg high-dose EU launch",
+      "stage": "regulatory",
+      "note": "유럽에서 Wegovy 7.2mg 고용량 펜 런칭이 예정돼 있다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "QURE",
+      "date": "2026-09-15",
+      "title": "AMT-130 Huntington UK MHRA MAA submission",
+      "stage": "regulatory",
+      "note": "AMT-130 헌팅턴 유전자치료의 영국 MHRA MAA 제출이 3분기로 계획돼 있다.",
+      "origin": "report",
+      "source": "20260520_Report.md"
+    },
+    {
+      "ticker": "VERA",
+      "date": "2026-09-15",
+      "title": "Atacicept IgA nephropathy ORIGIN eGFR results",
+      "stage": "topline",
+      "note": "아타시셉트 ORIGIN 3상의 eGFR 결과가 3분기에 공개될 예정이다.",
+      "origin": "report",
+      "source": "20260611_Report.md"
+    },
+    {
+      "ticker": "BMY",
+      "date": "2026-09-30",
+      "title": "Camzyos (mavacamten) adolescent oHCM sNDA PDUFA",
+      "stage": "regulatory",
+      "note": "Camzyos 청소년 폐쇄성 HCM sNDA의 우선심사 PDUFA가 예정돼 있다.",
+      "origin": "report",
+      "source": "20260602_Report.md"
+    },
+    {
+      "ticker": "CYTK",
+      "date": "2026-11-14",
+      "title": "Aficamten HCM (MAPLE-HCM) PDUFA",
+      "stage": "regulatory",
+      "note": "aficamten 비대성심근병증 sNDA PDUFA가 11월 14일로 예정돼 있다.",
+      "origin": "report",
+      "source": "20260520_Report.md"
+    },
+    {
+      "ticker": "SMMT",
+      "date": "2026-11-14",
+      "title": "Ivonescimab EGFR-mutant NSCLC PDUFA",
+      "stage": "regulatory",
+      "note": "ivonescimab EGFR 변이 post-TKI NSCLC 적응증의 FDA PDUFA가 예정돼 있다.",
+      "origin": "report",
+      "source": "20260528_Report.md"
+    },
+    {
+      "ticker": "APGE",
+      "date": "2026-12-15",
+      "title": "Zumilokibart atopic dermatitis Phase 3 start",
+      "stage": "regulatory",
+      "note": "zumilokibart 아토피피부염 Phase 3 개시·디자인 공시가 2026 하반기 예정이다.",
+      "origin": "report",
+      "source": "20260528_Report.md"
+    },
+    {
+      "ticker": "AZN",
+      "date": "2026-12-15",
+      "title": "Datroway (Dato-DXd) NSCLC EGFR TROPION-Lung12 readout",
+      "stage": "topline",
+      "note": "NSCLC EGFR 변이군 1차 치료 TROPION-Lung12 데이터가 2026 하반기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260525_Report.md"
+    },
+    {
+      "ticker": "AZN",
+      "date": "2026-12-15",
+      "title": "Datroway HR+/HER2- breast cancer label expansion",
+      "stage": "regulatory",
+      "note": "Datroway HR+/HER2- 유방암 라벨 확장이 2026 하반기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "BMRN",
+      "date": "2026-12-15",
+      "title": "Voxzogo hypochondroplasia NDA submission",
+      "stage": "regulatory",
+      "note": "Voxzogo 연골무형성증(HCH) 적응증 NDA 제출이 2026 하반기 예정이다.",
+      "origin": "report",
+      "source": "20260527_Report.md"
+    },
+    {
+      "ticker": "CYTK",
+      "date": "2026-12-15",
+      "title": "Ulacamten HFpEF Phase 2 Cohort 1 completion",
+      "stage": "topline",
+      "note": "울라캄텐 HFpEF Phase 2 Cohort 1 완료가 2026 하반기로 예정돼 있다.",
+      "origin": "report",
+      "source": "20260521_Report.md"
+    },
+    {
+      "ticker": "KYTX",
+      "date": "2026-12-15",
+      "title": "Mivocabtagene (miv-cel) SPS BLA review",
+      "stage": "regulatory",
+      "note": "강직인간증후군 대상 자가면역 CAR-T의 SPS BLA 심사가 4분기 완료 예정이다.",
+      "origin": "report",
+      "source": "20260520_Report.md"
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-12-15",
+      "title": "Retatrutide TRIUMPH-3 MASH data",
+      "stage": "topline",
+      "note": "retatrutide MASH(TRIUMPH-3) 데이터가 2026 하반기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-12-15",
+      "title": "Retatrutide obesity NDA submission",
+      "stage": "regulatory",
+      "note": "retatrutide 비만 적응증 NDA 제출이 2026 하반기에 예정돼 있다.",
+      "origin": "report",
+      "source": "20260527_Report.md"
+    },
+    {
+      "ticker": "NVO",
+      "date": "2026-12-15",
+      "title": "CagriSema obesity FDA decision",
+      "stage": "regulatory",
+      "note": "CagriSema 비만 적응증의 FDA 결정이 4분기로 예정돼 있다.",
+      "origin": "report",
+      "source": "20260610_Report.md"
+    },
+    {
+      "ticker": "RVMD",
+      "date": "2026-12-15",
+      "title": "Daraxonrasib pancreatic cancer NDA submission (CNPV)",
+      "stage": "regulatory",
+      "note": "National Priority Voucher를 활용한 daraxonrasib NDA 제출이 2026 하반기로 예상된다.",
+      "origin": "report",
+      "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "SMMT",
+      "date": "2026-12-15",
+      "title": "Ivonescimab HARMONi-3 squamous cohort final PFS",
+      "stage": "topline",
+      "note": "HARMONi-3 편평 코호트 최종 PFS 분석이 2026 하반기 예정으로 미국 진입 관문이다.",
+      "origin": "report",
+      "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "VERA",
+      "date": "2026-12-15",
+      "title": "Atacicept IgA nephropathy full-approval sBLA submission",
+      "stage": "regulatory",
+      "note": "아타시셉트 완전승인용 sBLA가 4분기 제출될 계획이다.",
+      "origin": "report",
+      "source": "20260611_Report.md"
+    },
+    {
+      "ticker": "VYGR",
+      "date": "2026-12-15",
+      "title": "VY1706 tau gene therapy Alzheimer Phase 1 dosing start",
+      "stage": "regulatory",
+      "note": "타우 표적 유전자치료 VY1706의 알츠하이머 Phase 1 투여가 2026 하반기 개시 예정이다.",
+      "origin": "report",
+      "source": "20260609_Report.md"
+    }
+  ]
+}
