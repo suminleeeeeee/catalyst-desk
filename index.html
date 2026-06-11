@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catalyst Desk · Live</title>
+<style>
+  :root{
+    --bg:#EFF1EE; --card:#FFFFFF; --ink:#1C211F; --muted:#68726C; --line:#DCE1DC;
+    --soft:#F6F7F5; --v1:#46276E; --v2:#8473B8; --v3:#C9BFE0; --teal:#0B7285;
+    --up:#1B7F4D; --down:#BF3B2B; --gray:#9AA39D;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Avenir Next','Pretendard',system-ui,-apple-system,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:20px 16px 80px}
+  h1{font-size:22px;font-weight:800;letter-spacing:-0.02em;margin:0}
+  h1 b{color:var(--v1)}
+  .sub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+  .chip{font-family:var(--mono);font-size:13px;font-weight:800;padding:8px 12px;
+    border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:pointer}
+  .chip.active{background:var(--v1);color:#fff;border-color:var(--v1)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:16px}
+  .ranges button{font-size:12px;font-weight:700;border:1px solid var(--line);background:var(--card);
+    border-radius:8px;padding:5px 10px;cursor:pointer;font-family:inherit;color:var(--muted)}
+  .ranges button.active{background:var(--soft);color:var(--ink);border-color:var(--v2)}
+  svg{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:8px}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .dot{display:inline-block;border-radius:50%}
+  .btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;
+    padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+  .btn.primary{background:var(--v1);color:#fff;border-color:var(--v1)}
+  .btn.small{padding:4px 9px;font-size:12px}
+  .btn.danger{color:var(--down)}
+  input,select{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;
+    font-family:inherit;background:#fff;color:var(--ink);width:100%}
+  label.f{display:block;margin-bottom:10px}
+  label.f .l{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;letter-spacing:.04em}
+  .stagechip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .item{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .rx{font-family:var(--mono);font-size:12px;font-weight:800;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid var(--line)}
+  .muted{color:var(--muted)}
+  .sect{font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--muted);
+    margin:18px 0 10px;text-transform:uppercase}
+  #pop{position:fixed;display:none;z-index:50;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;max-width:280px;box-shadow:0 6px 24px rgba(28,33,31,.14);font-size:12px}
+  #hover{position:fixed;display:none;z-index:40;background:var(--ink);color:#fff;border-radius:6px;
+    padding:3px 8px;font-size:11px;font-family:var(--mono);pointer-events:none}
+  .empty{padding:18px 14px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:13px}
+  button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--v1);outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row" style="justify-content:space-between">
+    <h1>Catalyst <b>Desk</b> · Live</h1>
+    <div class="sub" id="updated"></div>
+  </div>
+
+  <div class="chips" id="tickers"></div>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between;margin-bottom:8px">
+      <div class="row ranges" id="ranges">
+        <button data-r="90">3M</button><button data-r="180" class="active">6M</button><button data-r="365">1Y</button>
+      </div>
+      <div class="sub" id="lastpx"></div>
+    </div>
+    <div id="chart"></div>
+    <div class="legend">
+      <span><i class="dot" style="width:14px;height:14px;background:var(--v1)"></i>Topline · 임팩트 최대</span>
+      <span><i class="dot" style="width:14px;height:14px;background:var(--teal)"></i>Regulatory</span>
+      <span><i class="dot" style="width:10px;height:10px;background:var(--v2)"></i>학회 발표</span>
+      <span><i class="dot" style="width:8px;height:8px;background:var(--v3)"></i>논문 게재</span>
+      <span class="muted">─ ─ 예정/월 단위 · 마커를 누르면 실제 주가 반응이 떠요</span>
+    </div>
+  </div>
+
+  <div class="row" style="gap:8px">
+    <button class="btn primary" id="toggleAdd">+ Catalyst</button>
+    <label class="btn" style="display:inline-block;cursor:pointer">JSON 가져오기 (Catalyst Desk 내보내기 파일)
+      <input type="file" id="importFile" accept="application/json" style="display:none">
+    </label>
+  </div>
+
+  <div class="card" id="addForm" style="display:none;margin-top:12px">
+    <label class="f"><div class="l">이벤트명</div><input id="fTitle" placeholder="예: aficamten SEQUOIA-HCM PDUFA"></label>
+    <div class="row" style="gap:10px;align-items:flex-start">
+      <label class="f" style="flex:1"><div class="l">날짜 (YYYY-MM-DD 또는 YYYY-MM)</div><input id="fDate" placeholder="2026-09-26" style="font-family:var(--mono)"></label>
+      <label class="f" style="flex:1"><div class="l">단계</div>
+        <select id="fStage">
+          <option value="topline">Topline</option><option value="regulatory">Regulatory</option>
+          <option value="conference">학회 발표</option><option value="publication">논문 게재</option>
+          <option value="other">기타</option>
+        </select></label>
+    </div>
+    <label class="f"><div class="l">메모</div><input id="fNote" placeholder="선택"></label>
+    <button class="btn primary" id="saveCat">저장</button>
+  </div>
+
+  <div class="sect">Catalysts · 실제 주가 반응</div>
+  <div class="sub" style="margin:-4px 0 10px">반응 = 직전 거래일 종가 대비 D+1 / D+5 변동률 (자동 계산)</div>
+  <div id="list"></div>
+</div>
+
+<div id="pop"></div>
+<div id="hover"></div>
+
+<script>
+const LS = "catalyst-desk-live-v1";
+const STAGES = {
+  topline:{label:"Topline", color:"#46276E", r:7, text:"#fff"},
+  regulatory:{label:"Regulatory", color:"#0B7285", r:7, text:"#fff"},
+  conference:{label:"학회 발표", color:"#8473B8", r:5, text:"#fff"},
+  publication:{label:"논문 게재", color:"#C9BFE0", r:4, text:"#1C211F"},
+  other:{label:"기타", color:"#9AA39D", r:4, text:"#1C211F"}
+};
+let prices = null;          // {updated, series:{TICKER:[{d,c}]}}
+let store = load();         // {catalysts:[...]}
+let ticker = null;
+let rangeDays = 180;
+
+function load(){
+  try{ return JSON.parse(localStorage.getItem(LS)) || {catalysts:[]}; }
+  catch{ return {catalysts:[]}; }
+}
+function save(){ localStorage.setItem(LS, JSON.stringify(store)); }
+const uid = () => Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const fmtPct = v => (v>=0?"+":"")+v.toFixed(1)+"%";
+const pctColor = v => v>=0 ? "var(--up)" : "var(--down)";
+function parseD(s){
+  if(!s) return null;
+  const p = s.split("-").map(Number);
+  if(p.length===2) return new Date(p[0],p[1]-1,15);
+  if(p.length===3) return new Date(p[0],p[1]-1,p[2]);
+  return null;
+}
+const isMonthOnly = s => s && s.split("-").length===2;
+
+/* 직전 거래일 종가 대비 D+1 / D+5 반응 */
+function reaction(series, dateStr){
+  if(!series || !dateStr || isMonthOnly(dateStr)) return null;
+  const i = series.findIndex(p => p.d >= dateStr);
+  if(i <= 0) return null;
+  const base = series[i-1].c;
+  const d1 = (series[i].c - base)/base*100;
+  const j = Math.min(i+4, series.length-1);
+  const d5 = (series[j].c - base)/base*100;
+  return {d1, d5, on: series[i].d, settled: j === i+4};
+}
+
+/* ── 초기화 ── */
+async function init(){
+  try{
+    const r = await fetch("data/prices.json", {cache:"no-store"});
+    if(!r.ok) throw new Error();
+    prices = await r.json();
+    document.getElementById("updated").textContent =
+      "주가 업데이트: " + (prices.updated||"").replace("T"," ").slice(0,16) + " UTC";
+  }catch{
+    document.getElementById("chart").innerHTML =
+      '<div class="empty">아직 data/prices.json 이 없어요. GitHub Actions 탭에서 "Fetch daily prices" 워크플로를 한 번 수동 실행(Run workflow)하면 생성됩니다.</div>';
+  }
+  const syms = prices ? Object.keys(prices.series) : [];
+  ticker = syms[0] || null;
+  renderTickers(syms);
+  renderAll();
+}
+
+function renderTickers(syms){
+  const el = document.getElementById("tickers");
+  el.innerHTML = "";
+  syms.forEach(s => {
+    const b = document.createElement("button");
+    b.className = "chip" + (s===ticker?" active":"");
+    b.textContent = s;
+    const n = store.catalysts.filter(c=>c.ticker===s).length;
+    if(n) b.textContent += " · "+n;
+    b.onclick = () => { ticker=s; renderTickers(syms); renderAll(); };
+    el.appendChild(b);
+  });
+}
+
+function renderAll(){ hidePop(); renderChart(); renderList(); }
+
+/* ── 차트 ── */
+function renderChart(){
+  const host = document.getElementById("chart");
+  if(!prices || !ticker || !prices.series[ticker]){ return; }
+  const full = prices.series[ticker];
+  const series = full.slice(-rangeDays);
+  if(series.length < 2){ host.innerHTML = '<div class="empty">데이터가 부족해요.</div>'; return; }
+
+  document.getElementById("lastpx").textContent =
+    ticker + "  $" + series[series.length-1].c.toFixed(2) + "  (" + series[series.length-1].d + ")";
+
+  const W=900, H=380, P={l:56,r:16,t:20,b:30};
+  const t0 = parseD(series[0].d).getTime();
+  let t1 = parseD(series[series.length-1].d).getTime();
+
+  /* 예정 catalyst가 있으면 x축을 최대 75일 미래로 확장 */
+  const cats = store.catalysts.filter(c=>c.ticker===ticker && parseD(c.date));
+  const lastT = t1;
+  const futureCats = cats.filter(c => parseD(c.date).getTime() > lastT);
+  if(futureCats.length){
+    const maxF = Math.max(...futureCats.map(c=>parseD(c.date).getTime()));
+    t1 = Math.min(maxF + 4*864e5, lastT + 75*864e5);
+  }
+
+  const closes = series.map(p=>p.c);
+  let ymin = Math.min(...closes), ymax = Math.max(...closes);
+  const pad = (ymax-ymin)*0.07 || ymax*0.05;
+  ymin -= pad; ymax += pad;
+
+  const X = t => P.l + (t - t0)/(t1 - t0) * (W-P.l-P.r);
+  const Y = v => P.t + (1 - (v - ymin)/(ymax - ymin)) * (H-P.t-P.b);
+
+  let s = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" id="svgc">`;
+
+  /* 그리드 + y라벨 */
+  for(let g=0; g<=4; g++){
+    const v = ymin + (ymax-ymin)*g/4, y = Y(v);
+    s += `<line x1="${P.l}" y1="${y}" x2="${W-P.r}" y2="${y}" stroke="#DCE1DC" stroke-width="1"/>`;
+    s += `<text x="${P.l-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#68726C" font-family="var(--mono)">$${v.toFixed(v>200?0:1)}</text>`;
+  }
+  /* x라벨 5개 */
+  for(let g=0; g<=4; g++){
+    const t = t0 + (t1-t0)*g/4;
+    const d = new Date(t);
+    s += `<text x="${X(t)}" y="${H-8}" text-anchor="middle" font-size="11" fill="#68726C" font-family="var(--mono)">${d.getFullYear().toString().slice(2)}.${String(d.getMonth()+1).padStart(2,"0")}</text>`;
+  }
+
+  /* 미래 구간 음영 */
+  if(t1 > lastT){
+    s += `<rect x="${X(lastT)}" y="${P.t}" width="${X(t1)-X(lastT)}" height="${H-P.t-P.b}" fill="#46276E" opacity="0.04"/>`;
+    s += `<text x="${X(lastT)+6}" y="${P.t+12}" font-size="10" fill="#8473B8" font-weight="700">예정 →</text>`;
+  }
+
+  /* 가격 라인 + 면 */
+  const pts = series.map(p => [X(parseD(p.d).getTime()), Y(p.c)]);
+  const line = pts.map((p,i)=> (i?"L":"M")+p[0].toFixed(1)+","+p[1].toFixed(1)).join("");
+  s += `<path d="${line}L${pts[pts.length-1][0]},${H-P.b}L${pts[0][0]},${H-P.b}Z" fill="#46276E" opacity="0.06"/>`;
+  s += `<path d="${line}" fill="none" stroke="#1C211F" stroke-width="1.8"/>`;
+
+  /* catalyst 마커 */
+  cats.forEach(c => {
+    const st = STAGES[c.stage] || STAGES.other;
+    const ct = parseD(c.date).getTime();
+    if(ct < t0 - 864e5 || ct > t1) return;
+    const x = X(ct);
+    if(ct > lastT || isMonthOnly(c.date)){
+      /* 예정 또는 월 단위: 점선 수직선 */
+      s += `<line x1="${x}" y1="${P.t}" x2="${x}" y2="${H-P.b}" stroke="${st.color}" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.8"/>`;
+      s += `<circle cx="${x}" cy="${P.t+6}" r="${st.r}" fill="${st.color}" data-cat="${c.id}" style="cursor:pointer"/>`;
+    } else {
+      const i = series.findIndex(p => p.d >= c.date);
+      if(i < 0) return;
+      const y = Y(series[i].c);
+      s += `<line x1="${x}" y1="${P.t}" x2="${x}" y2="${H-P.b}" stroke="${st.color}" stroke-width="1" opacity="0.25"/>`;
+      s += `<circle cx="${x}" cy="${y}" r="${st.r}" fill="${st.color}" stroke="#fff" stroke-width="1.5" data-cat="${c.id}" style="cursor:pointer"/>`;
+    }
+    /* 터치 영역 확대 */
+    s += `<circle cx="${x}" cy="${ct>lastT||isMonthOnly(c.date)?P.t+6:Y((series[series.findIndex(p=>p.d>=c.date)]||series[series.length-1]).c)}" r="14" fill="transparent" data-cat="${c.id}" style="cursor:pointer"/>`;
+  });
+
+  s += `</svg>`;
+  host.innerHTML = s;
+
+  /* 마커 클릭 → 팝오버 */
+  host.querySelector("#svgc").addEventListener("click", e => {
+    const id = e.target.getAttribute && e.target.getAttribute("data-cat");
+    if(id) showPop(id, e.clientX, e.clientY); else hidePop();
+  });
+
+  /* 호버 크로스헤어 */
+  const svg = host.querySelector("#svgc");
+  const hov = document.getElementById("hover");
+  svg.addEventListener("mousemove", e => {
+    const rect = svg.getBoundingClientRect();
+    const t = t0 + ((e.clientX-rect.left)/rect.width*W - P.l)/(W-P.l-P.r)*(t1-t0);
+    let best=null, bd=Infinity;
+    series.forEach(p=>{const d=Math.abs(parseD(p.d).getTime()-t); if(d<bd){bd=d;best=p;}});
+    if(best && bd < 10*864e5){
+      hov.style.display="block"; hov.style.left=(e.clientX+12)+"px"; hov.style.top=(e.clientY-28)+"px";
+      hov.textContent = best.d+"  $"+best.c.toFixed(2);
+    } else hov.style.display="none";
+  });
+  svg.addEventListener("mouseleave", ()=> hov.style.display="none");
+}
+
+function showPop(id, x, y){
+  const c = store.catalysts.find(k=>k.id===id);
+  if(!c) return;
+  const st = STAGES[c.stage]||STAGES.other;
+  const rx = reaction(prices && prices.series[c.ticker], c.date);
+  const dd = parseD(c.date) ? Math.round((parseD(c.date)-new Date().setHours(0,0,0,0))/864e5) : null;
+  let html = `<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px">
+    <b style="font-family:var(--mono)">${c.ticker}</b>
+    <span class="stagechip" style="background:${st.color};color:${st.text}">${st.label}</span>
+    <span class="muted" style="font-family:var(--mono)">${c.date}${dd!==null&&dd>=0?" · D-"+dd:""}</span></div>
+    <div style="font-weight:700;margin-bottom:4px">${c.title}</div>`;
+  if(c.note) html += `<div class="muted" style="margin-bottom:6px">${c.note}</div>`;
+  if(rx) html += `<div style="display:flex;gap:6px">
+      <span class="rx" style="color:${pctColor(rx.d1)}">D+1 ${fmtPct(rx.d1)}</span>
+      <span class="rx" style="color:${pctColor(rx.d5)}">D+5 ${fmtPct(rx.d5)}${rx.settled?"":" (집계중)"}</span></div>`;
+  else if(dd!==null && dd>=0) html += `<div class="muted">아직 발생 전 — 발생 후 반응이 자동 계산돼요.</div>`;
+  const pop = document.getElementById("pop");
+  pop.innerHTML = html;
+  pop.style.display = "block";
+  pop.style.left = Math.min(x+10, window.innerWidth-300)+"px";
+  pop.style.top = (y+10)+"px";
+}
+function hidePop(){ document.getElementById("pop").style.display="none"; }
+document.addEventListener("click", e=>{
+  if(!e.target.closest("#pop") && !(e.target.getAttribute && e.target.getAttribute("data-cat"))) hidePop();
+});
+
+/* ── catalyst 목록 ── */
+function renderList(){
+  const el = document.getElementById("list");
+  const cats = store.catalysts
+    .filter(c=>c.ticker===ticker)
+    .sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+  if(!cats.length){
+    el.innerHTML = '<div class="empty">이 종목의 catalyst가 없어요. 직접 추가하거나, Claude의 Catalyst Desk 아티팩트에서 "JSON 내보내기"한 파일을 가져오세요.</div>';
+    return;
+  }
+  el.innerHTML = "";
+  cats.forEach(c=>{
+    const st = STAGES[c.stage]||STAGES.other;
+    const rx = reaction(prices && prices.series[c.ticker], c.date);
+    const row = document.createElement("div");
+    row.className = "item";
+    let rxHtml = "";
+    if(rx) rxHtml = `<span class="rx" style="color:${pctColor(rx.d1)}">D+1 ${fmtPct(rx.d1)}</span>
+                     <span class="rx" style="color:${pctColor(rx.d5)}">D+5 ${fmtPct(rx.d5)}</span>`;
+    row.innerHTML = `
+      <i class="dot" style="width:${st.r*2}px;height:${st.r*2}px;background:${st.color};margin-top:4px;flex-shrink:0"></i>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700">${c.title}</div>
+        <div class="muted" style="font-size:11px;font-family:var(--mono);margin-top:2px">${c.date||"날짜 미정"} · ${st.label}</div>
+        ${c.note?`<div class="muted" style="font-size:12px;margin-top:3px">${c.note}</div>`:""}
+        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">${rxHtml}</div>
+      </div>
+      <button class="btn small danger" data-del="${c.id}">✕</button>`;
+    row.querySelector("[data-del]").onclick = ()=>{
+      store.catalysts = store.catalysts.filter(k=>k.id!==c.id); save(); renderTickers(Object.keys(prices?prices.series:{})); renderAll();
+    };
+    el.appendChild(row);
+  });
+}
+
+/* ── 추가/가져오기 ── */
+document.getElementById("toggleAdd").onclick = ()=>{
+  const f = document.getElementById("addForm");
+  f.style.display = f.style.display==="none" ? "block" : "none";
+};
+document.getElementById("saveCat").onclick = ()=>{
+  const title = document.getElementById("fTitle").value.trim();
+  if(!title || !ticker) return;
+  store.catalysts.push({
+    id: uid(), ticker,
+    date: document.getElementById("fDate").value.trim(),
+    title,
+    stage: document.getElementById("fStage").value,
+    note: document.getElementById("fNote").value.trim()
+  });
+  save();
+  document.getElementById("fTitle").value = ""; document.getElementById("fDate").value = ""; document.getElementById("fNote").value = "";
+  document.getElementById("addForm").style.display = "none";
+  renderTickers(Object.keys(prices?prices.series:{})); renderAll();
+};
+document.getElementById("importFile").onchange = async e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const parsed = JSON.parse(await file.text());
+    const arr = Array.isArray(parsed) ? parsed : (parsed.catalysts || []);
+    const keys = new Set(store.catalysts.map(c=>`${c.ticker}|${(c.title||"").toLowerCase()}|${c.date||""}`));
+    let added = 0;
+    arr.forEach(x=>{
+      const k = `${x.ticker}|${(x.title||"").toLowerCase()}|${x.date||""}`;
+      if(x.ticker && x.title && !keys.has(k)){
+        store.catalysts.push({id:uid(), ticker:x.ticker, date:x.date||"", title:x.title, stage:STAGES[x.stage]?x.stage:"other", note:x.note||""});
+        keys.add(k); added++;
+      }
+    });
+    save(); renderTickers(Object.keys(prices?prices.series:{})); renderAll();
+    alert(added+"건 가져왔어요 (중복 "+(arr.length-added)+"건 제외).");
+  }catch{ alert("JSON 파싱에 실패했어요. Catalyst Desk의 'JSON 내보내기' 파일인지 확인해주세요."); }
+  e.target.value = "";
+};
+document.getElementById("ranges").addEventListener("click", e=>{
+  const r = e.target.getAttribute("data-r");
+  if(!r) return;
+  rangeDays = Number(r);
+  document.querySelectorAll("#ranges button").forEach(b=>b.classList.toggle("active", b===e.target));
+  renderAll();
+});
+
+init();
+</script>
+</body>
+</html>
