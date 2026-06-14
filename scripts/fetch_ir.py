@@ -111,17 +111,42 @@ def main():
         except Exception as e:
             print(f"[error] {ticker}: {e}")
 
-    all_news.sort(key=lambda n: n.get("date", ""), reverse=True)  # 최신순
+    # ── 누적 병합: 기존 ir_news.json 유지 + 이번 RSS의 새 항목만 추가 ──
+    # RSS는 최신 N건만 주므로, 매일 수집분을 누적해야 과거가 사라지지 않음.
+    os.makedirs("data", exist_ok=True)
+    existing = []
+    try:
+        with open("data/ir_news.json", "r", encoding="utf-8") as f:
+            existing = json.load(f).get("news", [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing = []
+
+    # URL을 고유 키로 중복 판단 (같은 보도자료는 URL이 동일)
+    by_url = {}
+    for n in existing:
+        key = n.get("url") or (n.get("ticker", "") + "|" + n.get("date", "") + "|" + n.get("title", ""))
+        by_url[key] = n
+
+    added = 0
+    for n in all_news:
+        key = n.get("url") or (n.get("ticker", "") + "|" + n.get("date", "") + "|" + n.get("title", ""))
+        if key not in by_url:
+            by_url[key] = n
+            added += 1
+        # 이미 있으면 유지 (덮어쓰지 않음 — 과거 보존)
+
+    merged = list(by_url.values())
+    merged.sort(key=lambda n: n.get("date", ""), reverse=True)  # 최신순
 
     out = {
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "source": "Company IR RSS feeds (keyword-filtered)",
-        "news": all_news,
+        "source": "Company IR RSS feeds (keyword-filtered, accumulated)",
+        "news": merged,
     }
-    os.makedirs("data", exist_ok=True)
     with open("data/ir_news.json", "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"\nsaved data/ir_news.json — {len(all_news)} releases, {len(FEEDS)} feeds")
+    print(f"\nsaved data/ir_news.json — total {len(merged)} releases "
+          f"(+{added} new, {len(existing)} kept), {len(FEEDS)} feeds")
 
 
 if __name__ == "__main__":
