@@ -421,7 +421,14 @@ function renderTrials(){
   el.innerHTML = "";
   list.forEach(t=>{
     const isActual = (t.pcd_type||"").toUpperCase() === "ACTUAL";
-    const dd = t.pcd ? dday(t.pcd) : null;
+    let dd = null;
+    if(t.pcd){
+      const pd = parseD(t.pcd);
+      if(pd && !isNaN(pd)){
+        const today = new Date(); today.setHours(0,0,0,0);
+        dd = Math.round((pd - today)/86400000);
+      }
+    }
     const typeBadge = isActual
       ? `<span class="rx" style="color:var(--teal);border-color:var(--teal)">완료</span>`
       : `<span class="rx" style="color:var(--muted)">추정</span>`;
