@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T12:17:42+00:00",
+  "updated": "2026-06-14T12:46:07+00:00",
   "source": "Company IR RSS feeds (keyword-filtered)",
   "news": [
     {
@@ -55,6 +55,18 @@
       ]
     },
     {
+      "ticker": "RVMD",
+      "date": "2026-05-31",
+      "title": "Revolution Medicines Announces ASCO Plenary Presentation Highlighting Unprecedented Results from Pivotal Phase 3 RASolute 302 Clinical Trial of Daraxonrasib in Previously Treated Metastatic Pancreatic Cancer",
+      "summary": "Results simultaneously published in The New England Journal of Medicine REDWOOD CITY, Calif., May 31, 2026 (GLOBE NEWSWIRE) -- Revolution Medicines, Inc. (Nasdaq: RVMD), a late-stage clinical oncology company developing targeted therapies for patients with RAS-addicted cancers, today announced",
+      "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-announces-asco-plenary-presentation",
+      "keywords": [
+        "phase 3",
+        "pivotal",
+        "results from"
+      ]
+    },
+    {
       "ticker": "LLY",
       "date": "2026-05-28",
       "title": "Lilly to present new data on Foundayo, Mounjaro and retatrutide at the American Diabetes Association's 86th Scientific Sessions, building toward a new era of choice in diabetes and obesity care",
@@ -62,6 +74,40 @@
       "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-present-new-data-foundayo-mounjaro-and-retatrutide",
       "keywords": [
         "phase 3"
+      ]
+    },
+    {
+      "ticker": "RVMD",
+      "date": "2026-05-06",
+      "title": "Revolution Medicines Announces Publication in New England Journal of Medicine of Phase 1/2 Clinical Data on Daraxonrasib in Pancreatic Cancer",
+      "summary": "Data contributed to the scientific and clinical rationale for RASolute 302, a pivotal Phase 3 trial in second line treatment of patients with metastatic pancreatic cancer REDWOOD CITY, Calif., May 06, 2026 (GLOBE NEWSWIRE) -- Revolution Medicines, a late-stage clinical oncology company developing",
+      "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-announces-publication-new-england-journal",
+      "keywords": [
+        "phase 3",
+        "pivotal"
+      ]
+    },
+    {
+      "ticker": "RVMD",
+      "date": "2026-05-06",
+      "title": "Revolution Medicines Reports First Quarter 2026 Financial Results and Update on Corporate Progress",
+      "summary": "Daraxonrasib demonstrated unprecedented survival benefit in Phase 3 RASolute 302 trial in previously treated metastatic pancreatic cancer; detailed results will be presented in upcoming ASCO Plenary presentation RASolute 302 data planned for submission to global regulatory authorities, including",
+      "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-reports-first-quarter-2026-financial",
+      "keywords": [
+        "phase 3",
+        "submission"
+      ]
+    },
+    {
+      "ticker": "RVMD",
+      "date": "2026-04-21",
+      "title": "Revolution Medicines to Present Pivotal Phase 3 RASolute 302 Clinical Trial Results for Daraxonrasib in Previously Treated Metastatic Pancreatic Cancer During a Plenary Session at the 2026 ASCO Annual Meeting",
+      "summary": "REDWOOD CITY, Calif., April 21, 2026 (GLOBE NEWSWIRE) -- Revolution Medicines, Inc. (Nasdaq: RVMD), a late-stage clinical oncology company developing targeted therapies for patients with RAS-addicted cancers, today announced that detailed results from the global, randomized Phase 3 RASolute 302",
+      "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-present-pivotal-phase-3-rasolute-302",
+      "keywords": [
+        "phase 3",
+        "pivotal",
+        "results from"
       ]
     }
   ]
