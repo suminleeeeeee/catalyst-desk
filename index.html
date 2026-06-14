@@ -78,6 +78,7 @@
       <span><i class="dot" style="width:10px;height:10px;background:var(--v2)"></i>학회 발표</span>
       <span><i class="dot" style="width:8px;height:8px;background:var(--v3)"></i>논문 게재</span>
       <span><i class="dot" style="width:9px;height:9px;background:var(--teal);border-radius:50%"></i>Phase 3 완료 예정 (임상, 점선)</span>
+      <span><i class="dot" style="width:9px;height:9px;background:#C77A2B;border-radius:2px"></i>IR 보도자료 (주황)</span>
       <span class="muted">─ ─ 예정/월 단위 · 마커를 누르면 상세가 떠요</span>
     </div>
   </div>
@@ -111,6 +112,10 @@
   <div class="sect" style="margin-top:24px">진행 중 Phase 3 · ClinicalTrials.gov</div>
   <div class="sub" style="margin:-4px 0 10px">1차 완료 예정일(primary completion date) = topline 예상 시점 단서 · <b style="color:var(--teal)">완료</b>=실제(ACTUAL), <b style="color:var(--muted)">추정</b>=예정(ESTIMATED)</div>
   <div id="trials"></div>
+
+  <div class="sect" style="margin-top:24px">최근 IR 보도자료 · 회사 발표</div>
+  <div class="sub" style="margin:-4px 0 10px">회사 IR RSS에서 catalyst 키워드(topline·Phase 3·FDA 등)로 필터 · 가장 먼저 공개되는 1차 소스 · 차트 기간 연동</div>
+  <div id="irlist"></div>
 </div>
 
 <div id="pop"></div>
@@ -119,6 +124,7 @@
 <script>
 const LS = "catalyst-desk-live-v1";
 const C_TEAL = "#0B7285";   // 임상 마커 색
+const C_AMBER = "#C77A2B";  // IR 보도자료 마커 색 (주황/앰버)
 const STAGES = {
   topline:{label:"Topline", color:"#46276E", r:7, text:"#fff"},
   regulatory:{label:"Regulatory", color:"#0B7285", r:7, text:"#fff"},
@@ -129,6 +135,7 @@ const STAGES = {
 let prices = null;          // {updated, series:{TICKER:[{d,c}]}}
 let store = load();         // {catalysts:[...]}
 let trials = [];            // ClinicalTrials.gov 진행 중 Phase 3
+let irNews = [];            // IR 보도자료 (키워드 필터)
 let chartT0 = null;         // 현재 차트 기간의 시작 시각(ms) — 임상 필터 공유용
 let ticker = null;
 let rangeDays = 180;
@@ -217,6 +224,15 @@ async function init(){
     }
   }catch{ /* trials.json 없으면 패스 */ }
 
+  /* IR 보도자료 (ir_news.json, 키워드 필터, GitHub Actions 자동 수집) */
+  try{
+    const ir = await fetch("data/ir_news.json", {cache:"no-store"});
+    if(ir.ok){
+      const ij = await ir.json();
+      irNews = ij.news || [];
+    }
+  }catch{ /* ir_news.json 없으면 패스 */ }
+
   const syms = prices ? Object.keys(prices.series) : [];
   ticker = syms[0] || null;
   renderTickers(syms);
@@ -237,7 +253,7 @@ function renderTickers(syms){
   });
 }
 
-function renderAll(){ hidePop(); renderChart(); renderList(); renderTrials(); }
+function renderAll(){ hidePop(); renderChart(); renderList(); renderTrials(); renderIR(); }
 
 /* ── 차트 ── */
 function renderChart(){
@@ -355,15 +371,33 @@ function renderChart(){
       }
     });
 
+  /* IR 보도자료 마커: 발표일(과거) 시점 주가선 위에 주황 사각 점 */
+  irNews
+    .filter(n => n.ticker === ticker && n.date)
+    .forEach(n => {
+      const pd = parseD(n.date);
+      if(!pd || isNaN(pd)) return;
+      const tt = pd.getTime();
+      if(tt < t0 || tt > t1) return;   // 차트 기간 밖이면 스킵
+      const x = X(tt);
+      const i = series.findIndex(p => p.d >= n.date);
+      const y = i>=0 ? Y(series[i].c) : Y(series[series.length-1].c);
+      s += `<line x1="${x}" y1="${P.t}" x2="${x}" y2="${H-P.b}" stroke="${C_AMBER}" stroke-width="1" opacity="0.18"/>`;
+      s += `<rect x="${x-4}" y="${y-4}" width="8" height="8" fill="${C_AMBER}" stroke="#fff" stroke-width="1.5" data-ir="${n.url}" style="cursor:pointer"/>`;
+      s += `<circle cx="${x}" cy="${y}" r="13" fill="transparent" data-ir="${n.url}" style="cursor:pointer"/>`;
+    });
+
   s += `</svg>`;
   host.innerHTML = s;
 
-  /* 마커 클릭 → 팝오버 (catalyst + 임상) */
+  /* 마커 클릭 → 팝오버 (catalyst + 임상 + IR) */
   host.querySelector("#svgc").addEventListener("click", e => {
     const cid = e.target.getAttribute && e.target.getAttribute("data-cat");
     const tid = e.target.getAttribute && e.target.getAttribute("data-trial");
+    const iid = e.target.getAttribute && e.target.getAttribute("data-ir");
     if(cid) showPop(cid, e.clientX, e.clientY);
     else if(tid) showTrialPop(tid, e.clientX, e.clientY);
+    else if(iid) showIRPop(iid, e.clientX, e.clientY);
     else hidePop();
   });
 
@@ -433,9 +467,31 @@ function showTrialPop(nct, x, y){
   pop.style.top = (y+10)+"px";
 }
 
+function showIRPop(url, x, y){
+  const n = irNews.find(k => k.url === url && k.ticker === ticker);
+  if(!n) return;
+  const rx = reaction(prices && prices.series[n.ticker], n.date);
+  let html = `<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px">
+    <b style="font-family:var(--mono)">${n.ticker}</b>
+    <span class="stagechip" style="background:${C_AMBER};color:#fff">IR 보도자료</span>
+    <span class="muted" style="font-family:var(--mono)">${n.date}</span></div>
+    <div style="font-weight:700;margin-bottom:4px;font-size:13px">${n.title}</div>`;
+  if(n.summary) html += `<div class="muted" style="margin-bottom:6px;font-size:12px">${n.summary}…</div>`;
+  if(n.keywords && n.keywords.length) html += `<div style="margin-bottom:6px"><span class="rx" style="color:${C_AMBER};border-color:${C_AMBER}">${n.keywords.join(" · ")}</span></div>`;
+  if(rx) html += `<div style="display:flex;gap:6px">
+      <span class="rx" style="color:${pctColor(rx.d1)}">D+1 ${fmtPct(rx.d1)}</span>
+      <span class="rx" style="color:${pctColor(rx.d5)}">D+5 ${fmtPct(rx.d5)}${rx.settled?"":" (집계중)"}</span></div>`;
+  html += `<div class="muted" style="font-size:11px;margin-top:6px"><a href="${n.url}" target="_blank" rel="noreferrer" style="color:${C_AMBER}">IR 원문 보기 ↗</a></div>`;
+  const pop = document.getElementById("pop");
+  pop.innerHTML = html;
+  pop.style.display = "block";
+  pop.style.left = Math.min(x+10, window.innerWidth-300)+"px";
+  pop.style.top = (y+10)+"px";
+}
+
 document.addEventListener("click", e=>{
   const inPop = e.target.closest("#pop");
-  const isMarker = e.target.getAttribute && (e.target.getAttribute("data-cat") || e.target.getAttribute("data-trial"));
+  const isMarker = e.target.getAttribute && (e.target.getAttribute("data-cat") || e.target.getAttribute("data-trial") || e.target.getAttribute("data-ir"));
   if(!inPop && !isMarker) hidePop();
 });
 
@@ -548,6 +604,54 @@ function renderTrials(){
     note.className = "sub";
     note.style.marginTop = "8px";
     note.textContent = `+ 이 기간 밖(완료 시점이 더 과거이거나 먼 미래)인 Phase 3 ${hidden}건은 숨겨졌어요 (전체 ${all.length}건 중 ${inRange.length}건 표시). 기간 버튼으로 범위를 넓힐 수 있어요.`;
+    el.appendChild(note);
+  }
+}
+
+/* ── 최근 IR 보도자료 (차트 기간 연동, 최신순) ── */
+function renderIR(){
+  const el = document.getElementById("irlist");
+  if(!el) return;
+  const startMs = chartT0 || (Date.now() - 180*864e5);
+  const all = irNews.filter(n => n.ticker === ticker);
+  const inRange = all
+    .filter(n => { const pd = n.date ? parseD(n.date) : null; return pd && !isNaN(pd) && pd.getTime() >= startMs; })
+    .sort((a,b)=> (b.date||"").localeCompare(a.date||""));   // 최신순
+
+  if(all.length === 0){
+    el.innerHTML = '<div class="empty">이 종목은 IR 수집 대상이 아니거나(현재 LLY만 지원) 아직 데이터가 없어요. fetch_ir.py의 FEEDS에서 관리해요.</div>';
+    return;
+  }
+  if(inRange.length === 0){
+    el.innerHTML = `<div class="empty">catalyst 관련 IR ${all.length}건이 있지만, 이 차트 기간 안에는 없어요. 기간을 넓혀보세요(6M·1Y).</div>`;
+    return;
+  }
+  const hidden = all.length - inRange.length;
+  el.innerHTML = "";
+  inRange.forEach(n=>{
+    const rx = reaction(prices && prices.series[n.ticker], n.date);
+    const rxHtml = rx
+      ? `<span class="rx" style="color:${pctColor(rx.d1)}">D+1 ${fmtPct(rx.d1)}</span><span class="rx" style="color:${pctColor(rx.d5)}">D+5 ${fmtPct(rx.d5)}${rx.settled?"":" (집계중)"}</span>`
+      : "";
+    const kw = (n.keywords||[]).slice(0,3).join(" · ");
+    const row = document.createElement("div");
+    row.className = "item";
+    row.innerHTML = `
+      <i class="dot" style="width:11px;height:11px;background:${C_AMBER};border-radius:2px;margin-top:5px;flex-shrink:0"></i>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700">
+          <a href="${n.url}" target="_blank" rel="noreferrer" style="color:var(--ink);text-decoration-color:${C_AMBER}">${n.title} ↗</a>
+        </div>
+        <div class="muted" style="font-size:11px;font-family:var(--mono);margin-top:2px">${n.date}${kw?` · ${kw}`:""}</div>
+        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center">${rxHtml}</div>
+      </div>`;
+    el.appendChild(row);
+  });
+  if(hidden > 0){
+    const note = document.createElement("div");
+    note.className = "sub";
+    note.style.marginTop = "8px";
+    note.textContent = `+ 이 기간 밖 IR ${hidden}건은 숨겨졌어요 (전체 ${all.length}건 중 ${inRange.length}건 표시).`;
     el.appendChild(note);
   }
 }
