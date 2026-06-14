@@ -27,6 +27,8 @@ SPONSORS = {
     "NVO": "Novo Nordisk A/S",
     "GILD": "Gilead Sciences",
     "MRK": "Merck Sharp & Dohme LLC",
+    "RVMD": "Revolution Medicines, Inc.",
+    "ABBV": "AbbVie",
 }
 
 # 진행 중으로 간주할 상태 (topline 전 단계)
