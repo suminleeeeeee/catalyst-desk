@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T00:00:00",
+  "updated": "2026-06-14T18:07:24",
   "catalysts": [
     {
       "ticker": "NTLA",
@@ -146,6 +146,15 @@
       "source": "20260607_Report.md"
     },
     {
+      "ticker": "BIIB",
+      "date": "2026-06-01",
+      "title": "Dapirolizumab pegol lupus (SLE) Phase 3 Lancet publication",
+      "stage": "publication",
+      "note": "파트너 UCB와 항CD40L 다피롤리주맙 페골의 중등도~중증 SLE 3상 데이터를 Lancet에 게재했다.",
+      "source": "20260602_Report_v2.md",
+      "origin": "report"
+    },
+    {
       "ticker": "LEGN",
       "date": "2026-06-01",
       "title": "LB2102 DLL3 CAR-T solid tumor Phase 1 ASCO data",
@@ -263,6 +272,78 @@
       "source": "20260606_Report.md"
     },
     {
+      "ticker": "GILD",
+      "date": "2026-06-08",
+      "title": "Islatravir/lenacapavir once-weekly oral HIV Phase 3 ISLEND-1/2 topline",
+      "stage": "topline",
+      "note": "머크와 공동개발한 경구 주1회 islatravir/lenacapavir가 ISLEND-1·2 48주 바이러스 억제 1차 지표를 충족했다.",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "GILD",
+      "date": "2026-06-08",
+      "title": "Trodelvy + Keytruda 1L NSCLC EVOKE-03 Phase 3 discontinued",
+      "stage": "topline",
+      "note": "1차 비소세포폐암에서 Trodelvy+키트루다 병용 EVOKE-03/KEYNOTE-D46이 PFS 통계적 유의성 미달로 조기 중단됐다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "MRK",
+      "date": "2026-06-08",
+      "title": "Islatravir/lenacapavir once-weekly oral HIV Phase 3 ISLEND-1/2 topline",
+      "stage": "topline",
+      "note": "길리어드와 공동개발한 경구 주1회 islatravir/lenacapavir가 ISLEND-1·2 48주 1차 지표를 충족했다.",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "MRK",
+      "date": "2026-06-08",
+      "title": "Trodelvy + Keytruda 1L NSCLC KEYNOTE-D46 Phase 3 discontinued",
+      "stage": "topline",
+      "note": "길리어드와 진행한 1차 비소세포폐암 Trodelvy+키트루다 병용 KEYNOTE-D46/EVOKE-03이 PFS 미달로 중단됐다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "TNGX",
+      "date": "2026-06-08",
+      "title": "Vopimetostat (TNG462) + daraxonrasib MTAP-deleted pancreatic Phase 1/2 data",
+      "stage": "topline",
+      "note": "PRMT5 억제제 vopimetostat와 daraxonrasib 병용이 MTAP 결손 췌장암 초기 임상에서 ORR 92%를 보고했다.",
+      "source": "20260613_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "OCS",
+      "date": "2026-06-09",
+      "title": "Licaminlimab dry eye disease PREDICT-1 first patient randomized",
+      "stage": "regulatory",
+      "note": "유전형 기반 안구건조증 치료제 licaminlimab의 등록임상 PREDICT-1 첫 환자가 무작위배정됐다.",
+      "source": "20260613_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "CRBU",
+      "date": "2026-06-11",
+      "title": "Vispa-cel (CB-010) allogeneic CAR-T B-NHL ANTLER long-term data EHA",
+      "stage": "conference",
+      "note": "EHA 2026에서 동종(off-the-shelf) CD19 CAR-T vispa-cel의 ANTLER 1상 장기 추적 데이터를 공개했다.",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "HCM",
+      "date": "2026-06-11",
+      "title": "Sovleplenib ESLIM-02 warm AIHA Phase 3 EHA data",
+      "stage": "conference",
+      "note": "EHA 2026에서 Syk 억제제 sovleplenib의 온난항체 자가면역용혈빈혈 3상 ESLIM-02가 1차 지표를 충족했다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "LEGN",
       "date": "2026-06-11",
       "title": "LB2501 in vivo CAR-T NHL Phase 1 EHA late-breaking data",
@@ -270,6 +351,15 @@
       "note": "in vivo CAR-T LB2501의 NHL 1상 전체 데이터가 EHA 2026에서 late-breaking 발표된다.",
       "origin": "report",
       "source": "20260609_Report.md"
+    },
+    {
+      "ticker": "MBX",
+      "date": "2026-06-12",
+      "title": "Canvuparatide (MBX-2109) hypoparathyroidism Phase 2 Avail full data",
+      "stage": "topline",
+      "note": "장기지속형 PTH canvuparatide의 부갑상선기능저하증 2상 Avail 12주 전체·1년 OLE 데이터가 공개됐다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "NTLA",
@@ -281,6 +371,33 @@
       "source": "20260607_Report.md"
     },
     {
+      "ticker": "KPTI",
+      "date": "2026-06-14",
+      "title": "Selinexor + ruxolitinib SENTRY myelofibrosis Phase 3 EHA data",
+      "stage": "conference",
+      "note": "EHA 2026에서 selinexor+ruxolitinib 1차 골수섬유증 3상 SENTRY가 SVR35 50% vs 28%로 충족됐다(JCO 동시 게재).",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "ATHE",
+      "date": "2026-06-15",
+      "title": "ATH434 multiple system atrophy End-of-Phase-2 FDA meeting",
+      "stage": "regulatory",
+      "note": "다계통위축증(MSA) 치료제 ATH434의 FDA End-of-Phase-2 미팅을 2026년 중반 진행해 3상을 준비한다.",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "CYTK",
+      "date": "2026-06-15",
+      "title": "Aficamten ACACIA-HCM non-obstructive HCM topline",
+      "stage": "topline",
+      "note": "aficamten의 비폐쇄성 HCM(nHCM) 3상 ACACIA-HCM 탑라인이 2분기 중 공개될 예정이다.",
+      "source": "20260612_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "INCY",
       "date": "2026-06-15",
       "title": "Tafasitamab frontMIND DLBCL sBLA submission",
@@ -288,6 +405,15 @@
       "note": "frontMIND 3상 기반 tafasitamab 1차 DLBCL sBLA가 2026 상반기 제출 예정이다.",
       "origin": "report",
       "source": "20260601_Report.md"
+    },
+    {
+      "ticker": "JADE",
+      "date": "2026-06-15",
+      "title": "JADE101 anti-APRIL IgA nephropathy Phase 2 start",
+      "stage": "regulatory",
+      "note": "항APRIL 항체 JADE101의 IgA신증 환자 대상 Phase 2를 2026년 중반 개시할 예정이다.",
+      "source": "20260602_Report_v2.md",
+      "origin": "report"
     },
     {
       "ticker": "QURE",
@@ -425,6 +551,15 @@
       "source": "20260529_Report.md"
     },
     {
+      "ticker": "MBX",
+      "date": "2026-09-15",
+      "title": "Canvuparatide hypoparathyroidism Phase 3 start",
+      "stage": "regulatory",
+      "note": "canvuparatide의 부갑상선기능저하증 Phase 3를 2026년 3분기 개시할 예정이다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "NVO",
       "date": "2026-09-15",
       "title": "Wegovy 7.2mg high-dose EU launch",
@@ -450,6 +585,15 @@
       "note": "아타시셉트 ORIGIN 3상의 eGFR 결과가 3분기에 공개될 예정이다.",
       "origin": "report",
       "source": "20260611_Report.md"
+    },
+    {
+      "ticker": "GSK",
+      "date": "2026-09-18",
+      "title": "Zidesamtinib ROS1 NSCLC FDA decision (PDUFA)",
+      "stage": "regulatory",
+      "note": "GSK가 인수한 Nuvalent의 ROS1 차세대 TKI zidesamtinib의 FDA 결정일이 9월 18일로 예정돼 있다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "BMY",
@@ -479,6 +623,15 @@
       "source": "20260528_Report.md"
     },
     {
+      "ticker": "GSK",
+      "date": "2026-11-27",
+      "title": "Neladalkib ALK NSCLC FDA decision (PDUFA)",
+      "stage": "regulatory",
+      "note": "GSK가 인수한 Nuvalent의 ALK 차세대 TKI neladalkib의 FDA 결정일이 11월 27일로 예정돼 있다.",
+      "source": "20260614_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "APGE",
       "date": "2026-12-15",
       "title": "Zumilokibart atopic dermatitis Phase 3 start",
@@ -504,6 +657,15 @@
       "note": "Datroway HR+/HER2- 유방암 라벨 확장이 2026 하반기에 예정돼 있다.",
       "origin": "report",
       "source": "20260526_Report.md"
+    },
+    {
+      "ticker": "BEAM",
+      "date": "2026-12-15",
+      "title": "Risto-cel sickle cell disease BLA submission",
+      "stage": "regulatory",
+      "note": "베이스에디팅 겸상적혈구병 치료제 risto-cel의 BLA를 2026년 말 제출 목표로 추진 중이다.",
+      "source": "20260518_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "BMRN",
@@ -549,6 +711,15 @@
       "note": "retatrutide 비만 적응증 NDA 제출이 2026 하반기에 예정돼 있다.",
       "origin": "report",
       "source": "20260527_Report.md"
+    },
+    {
+      "ticker": "NTLA",
+      "date": "2026-12-15",
+      "title": "Lonvo-z HAE rolling BLA submission completion",
+      "stage": "regulatory",
+      "note": "in vivo CRISPR HAE 치료제 lonvo-z의 롤링 BLA 제출을 2026년 하반기 완료할 계획이다.",
+      "source": "20260518_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "NVO",
