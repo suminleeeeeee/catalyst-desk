@@ -1,0 +1,68 @@
+{
+  "updated": "2026-06-14T12:17:42+00:00",
+  "source": "Company IR RSS feeds (keyword-filtered)",
+  "news": [
+    {
+      "ticker": "LLY",
+      "date": "2026-06-14",
+      "title": "Lilly's Jaypirca (pirtobrutinib) significantly reduced the risk of disease progression or death by 45% when added to a venetoclax time-limited regimen in people with previously treated CLL/SLL",
+      "summary": "BRUIN CLL-322 is the first Phase 3 study to demonstrate superiority over a venetoclax-containing control arm in CLL, and, with the majority of patients previously treated with a covalent BTK inhibitor, reflects current practice patterns These data will be highlighted in a late-breaking oral",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-jaypirca-pirtobrutinib-significantly-reduced-risk-disease",
+      "keywords": [
+        "phase 3"
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-06-09",
+      "title": "FDA approves Lilly's EBGLYSS® (lebrikizumab-lbkz) for one maintenance dose every eight weeks in patients with moderate-to-severe atopic dermatitis",
+      "summary": "EBGLYSS is now the only approved option that offers as few as six maintenance injections per year with no required topicals from the start INDIANAPOLIS, June 9, 2026 /PRNewswire/ -- Eli Lilly and Company (NYSE: LLY) announced today that the U.S. Food and Drug Administration (FDA) approved a regimen",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/fda-approves-lillys-ebglyssr-lebrikizumab-lbkz-one-maintenance",
+      "keywords": [
+        "fda approves",
+        "approved"
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-06-08",
+      "title": "Lilly's oral GLP-1 Foundayo (orforglipron) delivered superior A1C control and weight loss in three pivotal type 2 diabetes trials",
+      "summary": "In ACHIEVE-3, Foundayo 17.2 mg drove 57.1% greater relative reduction in A1C and 73.6% greater relative weight loss compared to oral semaglutide 14 mg In ACHIEVE-2 and ACHIEVE-5, Foundayo delivered significant improvements in blood sugar and weight, with up to 68.6% and 69.1% of participants",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-oral-glp-1-foundayo-orforglipron-delivered-superior-a1c",
+      "keywords": [
+        "pivotal"
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-06-02",
+      "title": "Lilly to spotlight growing hematology portfolio at 2026 European Hematology Association (EHA) Annual Meeting",
+      "summary": "Positive results from the Phase 3 BRUIN CLL-322 study comparing time-limited pirtobrutinib plus venetoclax and rituximab versus venetoclax and rituximab in patients with relapsed or refractory CLL/SLL will be highlighted in a late-breaking oral presentation Ajax Therapeutics, which Lilly has agreed",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-spotlight-growing-hematology-portfolio-2026-european",
+      "keywords": [
+        "phase 3",
+        "results from"
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-05-31",
+      "title": "Lilly's Retevmo (selpercatinib) demonstrated an 83% reduction in the risk of disease recurrence or death as adjuvant therapy for people with early-stage RET fusion-positive lung cancer",
+      "summary": "Phase 3 LIBRETTO-432 results establish RET fusions alongside EGFR mutations and ALK fusions as biomarkers in early-stage lung cancer that are associated with dramatic treatment outcomes, underscoring the importance of comprehensive biomarker testing across all stages of disease These data will be",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-retevmo-selpercatinib-demonstrated-83-reduction-risk",
+      "keywords": [
+        "phase 3"
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "date": "2026-05-28",
+      "title": "Lilly to present new data on Foundayo, Mounjaro and retatrutide at the American Diabetes Association's 86th Scientific Sessions, building toward a new era of choice in diabetes and obesity care",
+      "summary": "Phase 3 ACHIEVE results showed Foundayo, an oral GLP-1 taken without food or water restrictions, outperformed oral semaglutide and dapagliflozin in type 2 diabetes, reinforcing its potential to redefine oral incretin therapy New analyses of the ATTAIN program highlight Foundayo' s profile in",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-present-new-data-foundayo-mounjaro-and-retatrutide",
+      "keywords": [
+        "phase 3"
+      ]
+    }
+  ]
+}
