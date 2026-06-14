@@ -24,10 +24,14 @@ jobs:
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
         run: python scripts/fetch_prices.py
 
+      - name: Fetch trials from ClinicalTrials.gov
+        run: python scripts/fetch_trials.py
+        continue-on-error: true   # 임상 수집 실패해도 주가 커밋은 진행
+
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/prices.json
-          git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%F)"
+          git add data/prices.json data/trials.json
+          git diff --cached --quiet || git commit -m "chore: update data $(date -u +%F)"
           git push
