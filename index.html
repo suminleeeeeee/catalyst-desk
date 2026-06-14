@@ -77,7 +77,8 @@
       <span><i class="dot" style="width:14px;height:14px;background:var(--teal)"></i>Regulatory</span>
       <span><i class="dot" style="width:10px;height:10px;background:var(--v2)"></i>학회 발표</span>
       <span><i class="dot" style="width:8px;height:8px;background:var(--v3)"></i>논문 게재</span>
-      <span class="muted">─ ─ 예정/월 단위 · 마커를 누르면 실제 주가 반응이 떠요</span>
+      <span><i class="dot" style="width:9px;height:9px;background:var(--teal);border-radius:50%"></i>Phase 3 완료 예정 (임상, 점선)</span>
+      <span class="muted">─ ─ 예정/월 단위 · 마커를 누르면 상세가 떠요</span>
     </div>
   </div>
 
@@ -117,6 +118,7 @@
 
 <script>
 const LS = "catalyst-desk-live-v1";
+const C_TEAL = "#0B7285";   // 임상 마커 색
 const STAGES = {
   topline:{label:"Topline", color:"#46276E", r:7, text:"#fff"},
   regulatory:{label:"Regulatory", color:"#0B7285", r:7, text:"#fff"},
@@ -251,12 +253,19 @@ function renderChart(){
   const t0 = parseD(series[0].d).getTime();
   let t1 = parseD(series[series.length-1].d).getTime();
 
-  /* 예정 catalyst가 있으면 x축을 최대 75일 미래로 확장 */
+  /* 예정 catalyst·임상이 있으면 x축을 최대 75일 미래로 확장 */
   const cats = store.catalysts.filter(c=>c.ticker===ticker && parseD(c.date));
   const lastT = t1;
-  const futureCats = cats.filter(c => parseD(c.date).getTime() > lastT);
-  if(futureCats.length){
-    const maxF = Math.max(...futureCats.map(c=>parseD(c.date).getTime()));
+  const futureCatMs = cats
+    .map(c => parseD(c.date) && parseD(c.date).getTime())
+    .filter(ms => ms && ms > lastT);
+  const futureTrialMs = trials
+    .filter(t => t.ticker===ticker && t.pcd && (t.pcd_type||"").toUpperCase()!=="ACTUAL")
+    .map(t => parseD(t.pcd) && parseD(t.pcd).getTime())
+    .filter(ms => ms && ms > lastT);
+  const allFuture = [...futureCatMs, ...futureTrialMs];
+  if(allFuture.length){
+    const maxF = Math.max(...allFuture);
     t1 = Math.min(maxF + 4*864e5, lastT + 75*864e5);
   }
 
@@ -316,13 +325,31 @@ function renderChart(){
     s += `<circle cx="${x}" cy="${ct>lastT||isMonthOnly(c.date)?P.t+6:Y((series[series.findIndex(p=>p.d>=c.date)]||series[series.length-1]).c)}" r="14" fill="transparent" data-cat="${c.id}" style="cursor:pointer"/>`;
   });
 
+  /* 임상 마커: 미래 완료 예정(ESTIMATED)만, 청록 점선 */
+  const nowMs = Date.now();
+  trials
+    .filter(t => t.ticker === ticker && t.pcd && (t.pcd_type||"").toUpperCase() !== "ACTUAL")
+    .forEach(t => {
+      const pd = parseD(t.pcd);
+      if(!pd || isNaN(pd)) return;
+      const tt = pd.getTime();
+      if(tt < nowMs || tt < t0 || tt > t1) return;   // 미래 + 차트 범위 안만
+      const x = X(tt);
+      s += `<line x1="${x}" y1="${P.t}" x2="${x}" y2="${H-P.b}" stroke="${C_TEAL}" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.7"/>`;
+      s += `<circle cx="${x}" cy="${P.t+18}" r="5" fill="${C_TEAL}" data-trial="${t.nct}" style="cursor:pointer"/>`;
+      s += `<circle cx="${x}" cy="${P.t+18}" r="13" fill="transparent" data-trial="${t.nct}" style="cursor:pointer"/>`;
+    });
+
   s += `</svg>`;
   host.innerHTML = s;
 
-  /* 마커 클릭 → 팝오버 */
+  /* 마커 클릭 → 팝오버 (catalyst + 임상) */
   host.querySelector("#svgc").addEventListener("click", e => {
-    const id = e.target.getAttribute && e.target.getAttribute("data-cat");
-    if(id) showPop(id, e.clientX, e.clientY); else hidePop();
+    const cid = e.target.getAttribute && e.target.getAttribute("data-cat");
+    const tid = e.target.getAttribute && e.target.getAttribute("data-trial");
+    if(cid) showPop(cid, e.clientX, e.clientY);
+    else if(tid) showTrialPop(tid, e.clientX, e.clientY);
+    else hidePop();
   });
 
   /* 호버 크로스헤어 */
@@ -364,8 +391,37 @@ function showPop(id, x, y){
   pop.style.top = (y+10)+"px";
 }
 function hidePop(){ document.getElementById("pop").style.display="none"; }
+
+function showTrialPop(nct, x, y){
+  const t = trials.find(k=>k.nct===nct && k.ticker===ticker);
+  if(!t) return;
+  const pd = parseD(t.pcd);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const dd = (pd && !isNaN(pd)) ? Math.round((pd-today)/864e5) : null;
+  const isActual = (t.pcd_type||"").toUpperCase()==="ACTUAL";
+  let html = `<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px">
+    <b style="font-family:var(--mono)">${t.ticker}</b>
+    <span class="stagechip" style="background:${C_TEAL};color:#fff">Phase 3 임상</span>
+    <span class="muted" style="font-family:var(--mono)">${t.pcd}${dd!==null&&dd>=0?" · D-"+dd:""}</span></div>
+    <div style="font-weight:700;margin-bottom:4px">${t.title}</div>`;
+  if(t.drug) html += `<div class="muted" style="margin-bottom:4px">약물: ${t.drug}</div>`;
+  html += `<div class="muted" style="font-family:var(--mono);margin-bottom:6px">${t.nct} · ${t.status}</div>`;
+  html += `<div style="display:flex;gap:6px;align-items:center">
+      <span style="font-size:11px;color:var(--muted)">1차 완료</span>
+      <span class="rx" style="font-weight:700">${t.pcd}</span>
+      <span class="rx" style="color:${isActual?C_TEAL:'var(--muted)'}">${isActual?'완료':'추정'}</span></div>
+      <div class="muted" style="font-size:11px;margin-top:6px">↑ 이 시점이 topline 예상 단서예요. <a href="${t.url}" target="_blank" rel="noreferrer" style="color:${C_TEAL}">원문 보기 ↗</a></div>`;
+  const pop = document.getElementById("pop");
+  pop.innerHTML = html;
+  pop.style.display = "block";
+  pop.style.left = Math.min(x+10, window.innerWidth-300)+"px";
+  pop.style.top = (y+10)+"px";
+}
+
 document.addEventListener("click", e=>{
-  if(!e.target.closest("#pop") && !(e.target.getAttribute && e.target.getAttribute("data-cat"))) hidePop();
+  const inPop = e.target.closest("#pop");
+  const isMarker = e.target.getAttribute && (e.target.getAttribute("data-cat") || e.target.getAttribute("data-trial"));
+  if(!inPop && !isMarker) hidePop();
 });
 
 /* ── catalyst 목록 ── */
@@ -410,30 +466,39 @@ function renderList(){
 function renderTrials(){
   const el = document.getElementById("trials");
   if(!el) return;
-  const list = trials
-    .filter(t => t.ticker === ticker)
-    .sort((a,b)=> (a.pcd||"9999").localeCompare(b.pcd||"9999"));
+  const today = new Date(); today.setHours(0,0,0,0);
+  const cutoff = new Date(today); cutoff.setMonth(cutoff.getMonth()-3); // 최근 3개월
 
-  if(list.length === 0){
+  const all = trials.filter(t => t.ticker === ticker);
+  const list = all
+    .filter(t => {
+      const pd = t.pcd ? parseD(t.pcd) : null;
+      if(!pd || isNaN(pd)) return false;
+      return pd >= cutoff;               // 미래 + 최근 3개월 내 완료만 (옛날 건 숨김)
+    })
+    .sort((a,b)=> parseD(a.pcd) - parseD(b.pcd));  // 다가오는 순 (가까운 날짜 먼저)
+
+  if(all.length === 0){
     el.innerHTML = '<div class="empty">이 종목은 추적 대상(ClinicalTrials.gov 수집 목록)에 없거나 진행 중 Phase 3가 없어요. 수집 종목은 fetch_trials.py의 SPONSORS에서 관리해요.</div>';
     return;
   }
+  if(list.length === 0){
+    el.innerHTML = `<div class="empty">진행 중 Phase 3 ${all.length}건이 있지만, 1차 완료 예정일이 임박(미래~최근 3개월)한 건 없어요. 대부분 완료 시점이 지났거나 먼 미래예요.</div>`;
+    return;
+  }
+  const hidden = all.length - list.length;
   el.innerHTML = "";
   list.forEach(t=>{
     const isActual = (t.pcd_type||"").toUpperCase() === "ACTUAL";
     let dd = null;
-    if(t.pcd){
-      const pd = parseD(t.pcd);
-      if(pd && !isNaN(pd)){
-        const today = new Date(); today.setHours(0,0,0,0);
-        dd = Math.round((pd - today)/86400000);
-      }
-    }
+    const pd = parseD(t.pcd);
+    if(pd && !isNaN(pd)) dd = Math.round((pd - today)/86400000);
     const typeBadge = isActual
       ? `<span class="rx" style="color:var(--teal);border-color:var(--teal)">완료</span>`
       : `<span class="rx" style="color:var(--muted)">추정</span>`;
     const ddBadge = (dd!==null && dd>=0)
-      ? `<span class="rx" style="color:var(--v1);border-color:var(--v1)">D-${dd}</span>` : "";
+      ? `<span class="rx" style="color:var(--v1);border-color:var(--v1)">D-${dd}</span>`
+      : (dd!==null ? `<span class="rx" style="color:var(--muted)">${Math.abs(dd)}일 전</span>` : "");
     const row = document.createElement("div");
     row.className = "item";
     row.innerHTML = `
@@ -453,6 +518,13 @@ function renderTrials(){
       </div>`;
     el.appendChild(row);
   });
+  if(hidden > 0){
+    const note = document.createElement("div");
+    note.className = "sub";
+    note.style.marginTop = "8px";
+    note.textContent = `+ 완료 시점이 지났거나 먼 미래인 Phase 3 ${hidden}건은 숨겨졌어요 (전체 ${all.length}건 중 ${list.length}건 표시).`;
+    el.appendChild(note);
+  }
 }
 document.getElementById("saveCat").onclick = ()=>{
   const title = document.getElementById("fTitle").value.trim();
