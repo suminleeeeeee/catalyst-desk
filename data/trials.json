@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T23:35:56+00:00",
+  "updated": "2026-06-22T23:50:30+00:00",
   "source": "ClinicalTrials.gov API v2",
   "trials": [
     {
@@ -1288,18 +1288,6 @@
     },
     {
       "ticker": "LLY",
-      "nct": "NCT06921759",
-      "title": "A Study to Investigate the Efficacy and Safety of Lebrikizumab in Participants With Moderate-to-Severe Atopic Hand and F",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2026-05",
-      "pcd_type": "ESTIMATED",
-      "condition": "Atopic Hand and Foot Dermatitis",
-      "url": "https://clinicaltrials.gov/study/NCT06921759"
-    },
-    {
-      "ticker": "LLY",
       "nct": "NCT06075667",
       "title": "A Study of Tirzepatide (LY3298176) Once Weekly in Adolescent Participants Who Have Obesity or Overweight With Weight-Rel",
       "drug": "",
@@ -1309,6 +1297,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Obesity, Overweight",
       "url": "https://clinicaltrials.gov/study/NCT06075667"
+    },
+    {
+      "ticker": "LLY",
+      "nct": "NCT06921759",
+      "title": "A Study to Investigate the Efficacy and Safety of Lebrikizumab in Participants With Moderate-to-Severe Atopic Hand and F",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2026-05",
+      "pcd_type": "ESTIMATED",
+      "condition": "Atopic Hand and Foot Dermatitis",
+      "url": "https://clinicaltrials.gov/study/NCT06921759"
     },
     {
       "ticker": "GILD",
@@ -1456,15 +1456,15 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT06389136",
-      "title": "A Study of Upadacitinib in Adult Participants With Moderate-to-Severe Atopic Dermatitis and Inadequate Response to Dupil",
+      "nct": "NCT07032597",
+      "title": "A Study to Assess Safety and Effectiveness of HArmonyCa Lidocaine Injectable Gel for Restoration and/or Creation of Mid-",
       "drug": "",
       "phase": "PHASE3",
-      "status": "RECRUITING",
+      "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2026-08",
       "pcd_type": "ESTIMATED",
-      "condition": "Atopic Dermatitis",
-      "url": "https://clinicaltrials.gov/study/NCT06389136"
+      "condition": "Mid Face Volume Deficit",
+      "url": "https://clinicaltrials.gov/study/NCT07032597"
     },
     {
       "ticker": "ABBV",
@@ -1480,15 +1480,15 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT07032597",
-      "title": "A Study to Assess Safety and Effectiveness of HArmonyCa Lidocaine Injectable Gel for Restoration and/or Creation of Mid-",
+      "nct": "NCT06389136",
+      "title": "A Study of Upadacitinib in Adult Participants With Moderate-to-Severe Atopic Dermatitis and Inadequate Response to Dupil",
       "drug": "",
       "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
+      "status": "RECRUITING",
       "pcd": "2026-08",
       "pcd_type": "ESTIMATED",
-      "condition": "Mid Face Volume Deficit",
-      "url": "https://clinicaltrials.gov/study/NCT07032597"
+      "condition": "Atopic Dermatitis",
+      "url": "https://clinicaltrials.gov/study/NCT06389136"
     },
     {
       "ticker": "ABBV",
@@ -1648,18 +1648,6 @@
     },
     {
       "ticker": "LLY",
-      "nct": "NCT04965493",
-      "title": "A Trial of Pirtobrutinib (LOXO-305) Plus Venetoclax and Rituximab (PVR) Versus Venetoclax and Rituximab (VR) in Previous",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2026-10",
-      "pcd_type": "ESTIMATED",
-      "condition": "Chronic Lymphocytic Leukemia, Small Lymphocytic Lymphoma",
-      "url": "https://clinicaltrials.gov/study/NCT04965493"
-    },
-    {
-      "ticker": "LLY",
       "nct": "NCT06297603",
       "title": "Effect of Retatrutide Compared With Placebo in Participants With Type 2 Diabetes and Moderate or Severe Renal Impairment",
       "drug": "",
@@ -1669,6 +1657,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Type 2 Diabetes",
       "url": "https://clinicaltrials.gov/study/NCT06297603"
+    },
+    {
+      "ticker": "LLY",
+      "nct": "NCT04965493",
+      "title": "A Trial of Pirtobrutinib (LOXO-305) Plus Venetoclax and Rituximab (PVR) Versus Venetoclax and Rituximab (VR) in Previous",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2026-10",
+      "pcd_type": "ESTIMATED",
+      "condition": "Chronic Lymphocytic Leukemia, Small Lymphocytic Lymphoma",
+      "url": "https://clinicaltrials.gov/study/NCT04965493"
     },
     {
       "ticker": "NVO",
@@ -1720,15 +1720,15 @@
     },
     {
       "ticker": "LLY",
-      "nct": "NCT06914895",
-      "title": "A Study of Tirzepatide (LY3298176) Compared With Placebo in Adults With Type 1 Diabetes and Obesity or Overweight",
+      "nct": "NCT06649045",
+      "title": "A Master Protocol for Orforglipron in Participants With Obstructive Sleep Apnea and Obesity or Overweight",
       "drug": "",
       "phase": "PHASE3",
       "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2026-11",
       "pcd_type": "ESTIMATED",
-      "condition": "Type 1 Diabetes, Obesity",
-      "url": "https://clinicaltrials.gov/study/NCT06914895"
+      "condition": "OSA, Overweight or Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT06649045"
     },
     {
       "ticker": "LLY",
@@ -1744,15 +1744,15 @@
     },
     {
       "ticker": "LLY",
-      "nct": "NCT06649045",
-      "title": "A Master Protocol for Orforglipron in Participants With Obstructive Sleep Apnea and Obesity or Overweight",
+      "nct": "NCT06914895",
+      "title": "A Study of Tirzepatide (LY3298176) Compared With Placebo in Adults With Type 1 Diabetes and Obesity or Overweight",
       "drug": "",
       "phase": "PHASE3",
       "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2026-11",
       "pcd_type": "ESTIMATED",
-      "condition": "OSA, Overweight or Obesity",
-      "url": "https://clinicaltrials.gov/study/NCT06649045"
+      "condition": "Type 1 Diabetes, Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT06914895"
     },
     {
       "ticker": "ABBV",
@@ -1864,18 +1864,6 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT06806293",
-      "title": "Study of Oral Atogepant to Assess Adverse Events and Change in Disease Activity in Adult Participants With Menstrual Mig",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2027-02",
-      "pcd_type": "ESTIMATED",
-      "condition": "Menstrual Migraine (MM)",
-      "url": "https://clinicaltrials.gov/study/NCT06806293"
-    },
-    {
-      "ticker": "ABBV",
       "nct": "NCT05183035",
       "title": "Venetoclax in Children With Relapsed Acute Myeloid Leukemia (AML)",
       "drug": "",
@@ -1885,6 +1873,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Acute Myeloid Leukemia",
       "url": "https://clinicaltrials.gov/study/NCT05183035"
+    },
+    {
+      "ticker": "ABBV",
+      "nct": "NCT06806293",
+      "title": "Study of Oral Atogepant to Assess Adverse Events and Change in Disease Activity in Adult Participants With Menstrual Mig",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2027-02",
+      "pcd_type": "ESTIMATED",
+      "condition": "Menstrual Migraine (MM)",
+      "url": "https://clinicaltrials.gov/study/NCT06806293"
     },
     {
       "ticker": "GILD",
@@ -1912,6 +1912,18 @@
     },
     {
       "ticker": "ABBV",
+      "nct": "NCT05843643",
+      "title": "Program to Assess Adverse Events and Change in Disease Activity of Oral Upadacitinib in Adult Participants With Moderate",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2027-03",
+      "pcd_type": "ESTIMATED",
+      "condition": "Systemic Lupus Erythematosus",
+      "url": "https://clinicaltrials.gov/study/NCT05843643"
+    },
+    {
+      "ticker": "ABBV",
       "nct": "NCT04777357",
       "title": "A Study to Assess Change in Disease Activity and Adverse Events (AEs) With Cariprazine in the Treatment of Depressive Ep",
       "drug": "",
@@ -1933,18 +1945,6 @@
       "pcd_type": "ESTIMATED",
       "condition": "Crohn's Disease",
       "url": "https://clinicaltrials.gov/study/NCT06063967"
-    },
-    {
-      "ticker": "ABBV",
-      "nct": "NCT05843643",
-      "title": "Program to Assess Adverse Events and Change in Disease Activity of Oral Upadacitinib in Adult Participants With Moderate",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2027-03",
-      "pcd_type": "ESTIMATED",
-      "condition": "Systemic Lupus Erythematosus",
-      "url": "https://clinicaltrials.gov/study/NCT05843643"
     },
     {
       "ticker": "LLY",
@@ -2068,18 +2068,6 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT06417775",
-      "title": "Study of Oral Ubrogepant to Assess Adverse Events and Change in Disease Activity in Adult Participants With Menstrual Mi",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "RECRUITING",
-      "pcd": "2027-06",
-      "pcd_type": "ESTIMATED",
-      "condition": "Migraine",
-      "url": "https://clinicaltrials.gov/study/NCT06417775"
-    },
-    {
-      "ticker": "ABBV",
       "nct": "NCT06332534",
       "title": "Crohn's Disease: Efficacy, Safety, and Pharmacokinetics of Upadacitinib in Pediatric Subjects With Moderately to Severel",
       "drug": "",
@@ -2089,6 +2077,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Crohn's Disease",
       "url": "https://clinicaltrials.gov/study/NCT06332534"
+    },
+    {
+      "ticker": "ABBV",
+      "nct": "NCT06417775",
+      "title": "Study of Oral Ubrogepant to Assess Adverse Events and Change in Disease Activity in Adult Participants With Menstrual Mi",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "RECRUITING",
+      "pcd": "2027-06",
+      "pcd_type": "ESTIMATED",
+      "condition": "Migraine",
+      "url": "https://clinicaltrials.gov/study/NCT06417775"
     },
     {
       "ticker": "GILD",
@@ -2116,15 +2116,15 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT03006068",
-      "title": "A Study to Evaluate the Long-Term Safety and Efficacy of Upadacitinib (ABT-494) in Participants With Ulcerative Colitis ",
+      "nct": "NCT04333576",
+      "title": "Study Of Oral Elagolix Tablets In Combination With Combined Oral Contraceptive Capsules/Tablets To Assess Dysmenorrhea R",
       "drug": "",
       "phase": "PHASE3",
       "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2027-07",
       "pcd_type": "ESTIMATED",
-      "condition": "Ulcerative Colitis (UC)",
-      "url": "https://clinicaltrials.gov/study/NCT03006068"
+      "condition": "Endometriosis",
+      "url": "https://clinicaltrials.gov/study/NCT04333576"
     },
     {
       "ticker": "ABBV",
@@ -2140,15 +2140,15 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT04333576",
-      "title": "Study Of Oral Elagolix Tablets In Combination With Combined Oral Contraceptive Capsules/Tablets To Assess Dysmenorrhea R",
+      "nct": "NCT03006068",
+      "title": "A Study to Evaluate the Long-Term Safety and Efficacy of Upadacitinib (ABT-494) in Participants With Ulcerative Colitis ",
       "drug": "",
       "phase": "PHASE3",
       "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2027-07",
       "pcd_type": "ESTIMATED",
-      "condition": "Endometriosis",
-      "url": "https://clinicaltrials.gov/study/NCT04333576"
+      "condition": "Ulcerative Colitis (UC)",
+      "url": "https://clinicaltrials.gov/study/NCT03006068"
     },
     {
       "ticker": "NVO",
@@ -2164,18 +2164,6 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT06880744",
-      "title": "A Study to Assess the Change in Disease Activity in Adult Participants With Moderate to Severe Ulcerative Colitis Treate",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2027-08",
-      "pcd_type": "ESTIMATED",
-      "condition": "Ulcerative Colitis",
-      "url": "https://clinicaltrials.gov/study/NCT06880744"
-    },
-    {
-      "ticker": "ABBV",
       "nct": "NCT06614192",
       "title": "A Study Assessing Adverse Events and Disease Activity of Intravenously (IV) Infused Telisotuzumab Adizutecan in Adult Pa",
       "drug": "",
@@ -2185,6 +2173,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Metastatic Colorectal Cancer",
       "url": "https://clinicaltrials.gov/study/NCT06614192"
+    },
+    {
+      "ticker": "ABBV",
+      "nct": "NCT06880744",
+      "title": "A Study to Assess the Change in Disease Activity in Adult Participants With Moderate to Severe Ulcerative Colitis Treate",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2027-08",
+      "pcd_type": "ESTIMATED",
+      "condition": "Ulcerative Colitis",
+      "url": "https://clinicaltrials.gov/study/NCT06880744"
     },
     {
       "ticker": "ABBV",
@@ -2224,18 +2224,6 @@
     },
     {
       "ticker": "ABBV",
-      "nct": "NCT04608318",
-      "title": "Ibrutinib Monotherapy Versus Fixed-duration Venetoclax Plus Obinutuzumab Versus Fixed-duration Ibrutinib Plus Venetoclax",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2027-09",
-      "pcd_type": "ESTIMATED",
-      "condition": "Chronic Lymphoid Leukemia",
-      "url": "https://clinicaltrials.gov/study/NCT04608318"
-    },
-    {
-      "ticker": "ABBV",
       "nct": "NCT06345339",
       "title": "A Study to Assess the Safety and Efficacy of Oral Armour Thyroid Compared to Synthetic T4 for the Treatment of Primary H",
       "drug": "",
@@ -2245,6 +2233,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Hypothyroidism",
       "url": "https://clinicaltrials.gov/study/NCT06345339"
+    },
+    {
+      "ticker": "ABBV",
+      "nct": "NCT04608318",
+      "title": "Ibrutinib Monotherapy Versus Fixed-duration Venetoclax Plus Obinutuzumab Versus Fixed-duration Ibrutinib Plus Venetoclax",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "pcd": "2027-09",
+      "pcd_type": "ESTIMATED",
+      "condition": "Chronic Lymphoid Leukemia",
+      "url": "https://clinicaltrials.gov/study/NCT04608318"
     },
     {
       "ticker": "NVO",
@@ -2368,6 +2368,18 @@
     },
     {
       "ticker": "ABBV",
+      "nct": "NCT04928846",
+      "title": "A Study to Assess Disease Activity and Adverse Events of Intravenous (IV) Telisotuzumab Vedotin Compared to IV Docetaxel",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "RECRUITING",
+      "pcd": "2028-03",
+      "pcd_type": "ESTIMATED",
+      "condition": "Non Small Cell Lung Cancer",
+      "url": "https://clinicaltrials.gov/study/NCT04928846"
+    },
+    {
+      "ticker": "ABBV",
       "nct": "NCT06428019",
       "title": "A Study to Evaluate the Risk of Tumor Lysis Syndrome (TLS) in Adult Participants Receiving Oral Venetoclax in Combinatio",
       "drug": "",
@@ -2413,18 +2425,6 @@
       "pcd_type": "ESTIMATED",
       "condition": "Hidradenitis Suppurativa",
       "url": "https://clinicaltrials.gov/study/NCT05889182"
-    },
-    {
-      "ticker": "ABBV",
-      "nct": "NCT06508658",
-      "title": "A Study of Subcutaneously Injected Epcoritamab Plus Oral Lenalidomide Tablets Compared to Intravenously (IV) Infused Rit",
-      "drug": "",
-      "phase": "PHASE3",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "pcd": "2028-03",
-      "pcd_type": "ESTIMATED",
-      "condition": "Diffuse Large B-Cell Lymphoma",
-      "url": "https://clinicaltrials.gov/study/NCT06508658"
     },
     {
       "ticker": "GILD",
@@ -2588,7 +2588,7 @@
       "title": "Study of Lenacapavir as a Once-Yearly Injection for HIV Pre-exposure Prophylaxis (PrEP)",
       "drug": "",
       "phase": "PHASE3",
-      "status": "RECRUITING",
+      "status": "ACTIVE_NOT_RECRUITING",
       "pcd": "2028-09",
       "pcd_type": "ESTIMATED",
       "condition": "HIV Pre-exposure Prophylaxis",
@@ -2749,6 +2749,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Triple Negative Breast Cancer",
       "url": "https://clinicaltrials.gov/study/NCT06081244"
+    },
+    {
+      "ticker": "GILD",
+      "nct": "NCT07658976",
+      "title": "Duo: A Phase IIIb Individual-Level Randomized Controlled Trial of an Integrated Strategy",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "NOT_YET_RECRUITING",
+      "pcd": "2029-09-01",
+      "pcd_type": "ESTIMATED",
+      "condition": "HIV Infection, Sexually Transmitted Infection",
+      "url": "https://clinicaltrials.gov/study/NCT07658976"
     },
     {
       "ticker": "NVO",
