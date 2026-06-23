@@ -1,7 +1,17 @@
 {
-  "updated": "2026-06-22T23:50:38+00:00",
+  "updated": "2026-06-23T23:36:03+00:00",
   "source": "Company IR RSS feeds (keyword-filtered, accumulated)",
   "news": [
+    {
+      "ticker": "RVMD",
+      "date": "2026-06-23",
+      "title": "Revolution Medicines Begins Treating Patients in RASolute 305, a Phase 3 Clinical Trial Evaluating Zoldonrasib in Combination with Chemotherapy as a First Line Treatment for Patients with RAS G12D Metastatic Pancreatic Cancer",
+      "summary": "REDWOOD CITY, Calif., June 23, 2026 (GLOBE NEWSWIRE) -- Revolution Medicines, a late-stage clinical oncology company developing targeted therapies for patients with RAS-addicted cancers, today announced that it has begun treating patients in RASolute 305, a global, randomized Phase 3 clinical trial",
+      "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-begins-treating-patients-rasolute-305-phase",
+      "keywords": [
+        "phase 3"
+      ]
+    },
     {
       "ticker": "LLY",
       "date": "2026-06-14",
