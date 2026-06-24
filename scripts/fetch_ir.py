@@ -24,6 +24,8 @@ from xml.etree import ElementTree as ET
 FEEDS = {
     "LLY": "https://investor.lilly.com/rss/news-releases.xml",
     "RVMD": "https://ir.revmed.com/rss/news-releases.xml",
+    "UTHR": "https://ir.unither.com/rss",
+    "ACHV": "https://ir.achievelifesciences.com/news-events/press-releases/rss",
 }
 
 # 1단계 포함 키워드. 긴 구절은 단순 포함, 짧은 약어는 단어 경계로 정확 매칭.

@@ -23,6 +23,8 @@ BASE = "https://clinicaltrials.gov/api/v2/studies"
 
 # 티커 → ClinicalTrials.gov 스폰서명 (정식 등록명 기준)
 SPONSORS = {
+    "UTHR": "United Therapeutics",
+    "ACHV": "Achieve Life Sciences",
     "LLY": "Eli Lilly and Company",
     "NVO": "Novo Nordisk A/S",
     "GILD": "Gilead Sciences",
