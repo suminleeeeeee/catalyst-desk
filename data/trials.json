@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T14:20:27+00:00",
+  "updated": "2026-06-24T14:28:56+00:00",
   "source": "ClinicalTrials.gov API v2",
   "trials": [
     {
@@ -1347,6 +1347,18 @@
       "url": "https://clinicaltrials.gov/study/NCT06625320"
     },
     {
+      "ticker": "UTHR",
+      "nct": "NCT04905693",
+      "title": "Extension Study of Inhaled Treprostinil in Subjects With Fibrotic Lung Disease",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ENROLLING_BY_INVITATION",
+      "pcd": "2026-06",
+      "pcd_type": "ESTIMATED",
+      "condition": "Idiopathic Pulmonary Fibrosis, Interstitial Lung Disease",
+      "url": "https://clinicaltrials.gov/study/NCT04905693"
+    },
+    {
       "ticker": "NVO",
       "nct": "NCT06534411",
       "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Tirzepatide in People With Typ",
@@ -1755,6 +1767,18 @@
       "url": "https://clinicaltrials.gov/study/NCT06962280"
     },
     {
+      "ticker": "ACHV",
+      "nct": "NCT07392125",
+      "title": "Phase 3 Trial Evaluating the Efficacy and Safety of Cytisinicline for Vaping Cessation in Adults Using Nicotine-Containi",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "NOT_YET_RECRUITING",
+      "pcd": "2026-11-15",
+      "pcd_type": "ESTIMATED",
+      "condition": "Vaping Cessation",
+      "url": "https://clinicaltrials.gov/study/NCT07392125"
+    },
+    {
       "ticker": "ABBV",
       "nct": "NCT06468228",
       "title": "A Study to Assess Disease Activity and Safety of Lutikizumab in Adult and Adolescent Participants With Moderate to Sever",
@@ -1801,6 +1825,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Obesity",
       "url": "https://clinicaltrials.gov/study/NCT06662383"
+    },
+    {
+      "ticker": "UTHR",
+      "nct": "NCT03683186",
+      "title": "A Study Evaluating the Long-Term Efficacy and Safety of Ralinepag in Subjects With PAH Via an Open-Label Extension",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "ENROLLING_BY_INVITATION",
+      "pcd": "2026-12",
+      "pcd_type": "ESTIMATED",
+      "condition": "PAH, Pulmonary Hypertension",
+      "url": "https://clinicaltrials.gov/study/NCT03683186"
     },
     {
       "ticker": "NVO",
@@ -2257,6 +2293,18 @@
       "pcd_type": "ESTIMATED",
       "condition": "Cardiovascular Disease",
       "url": "https://clinicaltrials.gov/study/NCT05669755"
+    },
+    {
+      "ticker": "UTHR",
+      "nct": "NCT05943535",
+      "title": "Study of the Efficacy and Safety of Inhaled Treprostinil in Subjects With Progressive Pulmonary Fibrosis (TETON-PPF)",
+      "drug": "",
+      "phase": "PHASE3",
+      "status": "RECRUITING",
+      "pcd": "2027-11",
+      "pcd_type": "ESTIMATED",
+      "condition": "Progressive Pulmonary Fibrosis, Interstitial Lung Disease",
+      "url": "https://clinicaltrials.gov/study/NCT05943535"
     },
     {
       "ticker": "NVO",

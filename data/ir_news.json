@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T14:20:28+00:00",
+  "updated": "2026-06-24T14:28:57+00:00",
   "source": "Company IR RSS feeds (keyword-filtered, accumulated)",
   "news": [
     {
@@ -10,6 +10,16 @@
       "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-begins-treating-patients-rasolute-305-phase",
       "keywords": [
         "phase 3"
+      ]
+    },
+    {
+      "ticker": "ACHV",
+      "date": "2026-06-22",
+      "title": "Achieve Life Sciences Receives Complete Response Letter from FDA for Cytisinicline NDA",
+      "summary": "",
+      "url": "https://ir.achievelifesciences.com/news-events/press-releases/detail/264/achieve-life-sciences-receives-complete-response-letter-from-fda-for-cytisinicline-nda",
+      "keywords": [
+        "nda"
       ]
     },
     {
@@ -118,6 +128,16 @@
         "phase 3",
         "pivotal",
         "results from"
+      ]
+    },
+    {
+      "ticker": "UTHR",
+      "date": "2026-03-02",
+      "title": "Phase 3 ADVANCE OUTCOMES Clinical Trial Results",
+      "summary": "",
+      "url": "https://ir.unither.com/events-and-presentations",
+      "keywords": [
+        "phase 3"
       ]
     }
   ]
