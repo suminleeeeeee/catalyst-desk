@@ -43,8 +43,13 @@ def get_token() -> str:
         TOKEN_URL, data=body,
         headers={"Content-Type": "application/x-www-form-urlencoded"},
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        data = json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", "replace")[:600]
+        print(f"[token] HTTP {e.code} {e.reason} — 응답본문: {detail}")
+        raise
     token = data.get("access_token")
     if not token:
         raise RuntimeError(f"토큰 발급 실패: {data}")
