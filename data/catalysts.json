@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T18:07:24",
+  "updated": "2026-06-25T00:02:34",
   "catalysts": [
     {
       "ticker": "NTLA",
@@ -245,6 +245,15 @@
       "source": "20260603_Report.md"
     },
     {
+      "ticker": "AZN",
+      "date": "2026-06-06",
+      "title": "Elecoglipron oral GLP-1 Phase 2b data (ADA), Phase 3 ELUMINATE start",
+      "stage": "conference",
+      "note": "경구 저분자 GLP-1 elecoglipron이 ADA에서 26주 체중 -10.5% 2b 데이터를 공개하고 Phase 3 ELUMINATE에 진입했다.",
+      "source": "20260619_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "BMEA",
       "date": "2026-06-07",
       "title": "Icovamenib COVALENT-112 type 1 diabetes Phase 2 ADA data",
@@ -270,6 +279,15 @@
       "note": "카그리세마 관련 추가 적응증·심혈관 데이터를 다루는 R&D 인베스터 이벤트가 열렸다.",
       "origin": "report",
       "source": "20260606_Report.md"
+    },
+    {
+      "ticker": "ELDN",
+      "date": "2026-06-08",
+      "title": "Tegoprubart islet transplant type 1 diabetes data (ADA)",
+      "stage": "conference",
+      "note": "ADA 2026에서 항CD40L 항체 tegoprubart 기반 칼시뉴린-free 면역억제로 췌도이식 1형당뇨 환자 일부가 인슐린 중단을 보였다.",
+      "source": "20260615_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "GILD",
@@ -308,12 +326,30 @@
       "origin": "report"
     },
     {
+      "ticker": "MTVA",
+      "date": "2026-06-08",
+      "title": "DA-1726 obesity GLP-1/glucagon Phase 1 data (ADA)",
+      "stage": "conference",
+      "note": "옥신토모듈린 유사 GLP-1/글루카곤 이중작용제 DA-1726이 ADA에서 평균 9.1% 체중감소 초기 데이터를 발표했다.",
+      "source": "20260624_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "TNGX",
       "date": "2026-06-08",
       "title": "Vopimetostat (TNG462) + daraxonrasib MTAP-deleted pancreatic Phase 1/2 data",
       "stage": "topline",
       "note": "PRMT5 억제제 vopimetostat와 daraxonrasib 병용이 MTAP 결손 췌장암 초기 임상에서 ORR 92%를 보고했다.",
       "source": "20260613_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "ALKS",
+      "date": "2026-06-09",
+      "title": "Alixorexton Vibrance-2 narcolepsy type 2 Phase 2 data (SLEEP 2026)",
+      "stage": "conference",
+      "note": "경구 OX2R 작용제 alixorexton이 기면증 2형 2상에서 MWT·ESS 1차 지표를 동시 충족해 글로벌 3상에 진입한다.",
+      "source": "20260619_Report.md",
       "origin": "report"
     },
     {
@@ -362,6 +398,15 @@
       "origin": "report"
     },
     {
+      "ticker": "MDCX",
+      "date": "2026-06-12",
+      "title": "PRECISION-E2 endometriosis IND submission",
+      "stage": "regulatory",
+      "note": "자궁내막증 임상 PRECISION-E2를 위한 IND를 제출했다(초기 단계 소형주).",
+      "source": "20260615_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "NTLA",
       "date": "2026-06-12",
       "title": "Lonvo-z HAE additional Phase 3 data EAACI",
@@ -369,6 +414,24 @@
       "note": "EAACI에서 lonvo-z의 추가 3상 데이터가 발표될 예정이다.",
       "origin": "report",
       "source": "20260607_Report.md"
+    },
+    {
+      "ticker": "SNY",
+      "date": "2026-06-12",
+      "title": "Tzield (teplizumab) pediatric stage 3 type 1 diabetes label expansion",
+      "stage": "regulatory",
+      "note": "항CD3 항체 Tzield가 8~17세 신규 진단 3기 1형당뇨 인슐린분비 보존 적응증으로 FDA 가속승인됐다.",
+      "source": "20260618_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "ZBIO",
+      "date": "2026-06-13",
+      "title": "Obexelimab INDIGO IgG4-RD Phase 3 success (EULAR)",
+      "stage": "topline",
+      "note": "비고갈성 이중기능 항체 obexelimab의 INDIGO 3상이 IgG4-관련질환 재발 위험을 위약 대비 56% 낮췄다.",
+      "source": "20260617_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "KPTI",
@@ -398,6 +461,15 @@
       "origin": "report"
     },
     {
+      "ticker": "IMNM",
+      "date": "2026-06-15",
+      "title": "Varegacestat desmoid tumor NDA submission (2Q2026)",
+      "stage": "regulatory",
+      "note": "감마-세크레타제 억제제 varegacestat의 데스모이드종양 3상 RINGSIDE 성공으로 2026년 2분기 NDA를 제출할 계획이다.",
+      "source": "20260619_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "INCY",
       "date": "2026-06-15",
       "title": "Tafasitamab frontMIND DLBCL sBLA submission",
@@ -413,6 +485,15 @@
       "stage": "regulatory",
       "note": "항APRIL 항체 JADE101의 IgA신증 환자 대상 Phase 2를 2026년 중반 개시할 예정이다.",
       "source": "20260602_Report_v2.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "NMRA",
+      "date": "2026-06-15",
+      "title": "Navacaprant KOASTAL-2/3 major depressive disorder Phase 3 failure",
+      "stage": "topline",
+      "note": "KOR 길항제 navacaprant가 KOASTAL-2·3 우울증 3상 1차 지표를 모두 충족하지 못해 개발을 중단했다(주가 -49%).",
+      "source": "20260616_Report.md",
       "origin": "report"
     },
     {
@@ -434,6 +515,33 @@
       "source": "20260604_Report.md"
     },
     {
+      "ticker": "OTLK",
+      "date": "2026-06-16",
+      "title": "ONS-5010/LYTENAVA wet AMD BLA resubmission accepted by FDA",
+      "stage": "regulatory",
+      "note": "안과용 베바시주맙 ONS-5010(LYTENAVA)의 습성 황반변성 재제출 BLA를 FDA가 접수했다.",
+      "source": "20260619_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "SPRO",
+      "date": "2026-06-17",
+      "title": "Utebzi (tebipenem pivoxil) cUTI FDA approval — first oral carbapenem",
+      "stage": "regulatory",
+      "note": "GSK와 개발한 Utebzi가 성인 복잡성 요로감염에 승인돼 세계 최초의 경구 카바페넴이 됐다.",
+      "source": "20260619_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "NVCR",
+      "date": "2026-06-18",
+      "title": "TRIDENT glioblastoma TTFields Phase 3 OS failure",
+      "stage": "topline",
+      "note": "신규 진단 교모세포종에서 TTFields 조기 시작 3상 TRIDENT가 전체생존 1차 지표를 충족하지 못했다.",
+      "source": "20260620_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "QURE",
       "date": "2026-06-18",
       "title": "AMT-260 refractory temporal lobe epilepsy first cohort data",
@@ -443,6 +551,24 @@
       "source": "20260604_Report.md"
     },
     {
+      "ticker": "IONS",
+      "date": "2026-06-19",
+      "title": "ION582 Angelman syndrome Phase 2 HALOS 18-month data",
+      "stage": "topline",
+      "note": "UBE3A 표적 ASO ION582의 앤젤만증후군 2상 HALOS 18개월 연장에서 인지·소통·운동 다영역 개선을 보고했다.",
+      "source": "20260620_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "REGN",
+      "date": "2026-06-19",
+      "title": "Garetosmab FOP BLA accepted, priority review",
+      "stage": "regulatory",
+      "note": "항-액티빈A 항체 garetosmab의 진행성 골화섬유이형성증(FOP) BLA가 우선심사로 수리됐다(승인 시 최초 치료제).",
+      "source": "20260620_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "ACHV",
       "date": "2026-06-20",
       "title": "Cytisinicline smoking cessation PDUFA",
@@ -450,6 +576,33 @@
       "note": "약 20년 만의 신규 금연 치료제 cytisinicline의 PDUFA가 예정돼 있다.",
       "origin": "report",
       "source": "20260605_Report_v2.md"
+    },
+    {
+      "ticker": "MLTX",
+      "date": "2026-06-21",
+      "title": "Sonelokimab VELA-1/VELA-2 hidradenitis suppurativa Phase 3 52-week data",
+      "stage": "topline",
+      "note": "IL-17A/F 나노바디 sonelokimab의 화농성한선염 3상 52주 데이터에서 HiSCR75 67.2%·HiSCR100 33.1%를 보였다.",
+      "source": "20260623_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "DFTX",
+      "date": "2026-06-22",
+      "title": "DT120 (LSD) Emerge major depression Phase 3 success",
+      "stage": "topline",
+      "note": "LSD 제제 DT120의 우울증 3상 Emerge가 6주 MADRS 위약대비 -8.1점(p<0.0001)으로 사이키델릭 첫 대규모 3상 성공을 기록했다.",
+      "source": "20260623_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "MPLT",
+      "date": "2026-06-22",
+      "title": "ML-004 autism (IRIS) Phase 2 primary endpoint miss",
+      "stage": "topline",
+      "note": "5-HT1B/1D 작용제 ML-004의 자폐 사회적의사소통 2상 IRIS가 1차 지표를 충족하지 못했다(과민성 하위군만 신호).",
+      "source": "20260623_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "IONS",
@@ -495,6 +648,33 @@
       "note": "gedatolisib 야생형 코호트 NDA의 우선심사 PDUFA가 예정돼 있다.",
       "origin": "report",
       "source": "20260601_Report_v2.md"
+    },
+    {
+      "ticker": "MRNA",
+      "date": "2026-08-05",
+      "title": "MFLUSIVA mRNA influenza vaccine PDUFA (VRBPAC 9-0)",
+      "stage": "regulatory",
+      "note": "mRNA 독감백신 MFLUSIVA가 FDA 자문위 9-0 만장일치 권고를 받았고 PDUFA가 8월 5일로 예정돼 있다.",
+      "source": "20260620_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "MPLT",
+      "date": "2026-08-15",
+      "title": "ML-007C-MA schizophrenia ZEPHYR Phase 2 topline",
+      "stage": "topline",
+      "note": "M1/M4 무스카린 작용제 ML-007C-MA의 조현병 2상 ZEPHYR 탑라인이 8월 중순 예정으로 회사의 핵심 바이너리 이벤트다.",
+      "source": "20260623_Report.md",
+      "origin": "report"
+    },
+    {
+      "ticker": "CAPR",
+      "date": "2026-08-22",
+      "title": "Deramiocel DMD cardiomyopathy BLA resubmission PDUFA",
+      "stage": "regulatory",
+      "note": "FDA가 deramiocel(심장구체유래세포)의 듀센근이영양증 심근병증 BLA CRL을 철회하고 재심사, PDUFA를 8월 22일로 설정했다.",
+      "source": "20260624_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "BIIB",
@@ -560,6 +740,15 @@
       "origin": "report"
     },
     {
+      "ticker": "MLTX",
+      "date": "2026-09-15",
+      "title": "Sonelokimab hidradenitis suppurativa BLA submission",
+      "stage": "regulatory",
+      "note": "sonelokimab의 화농성한선염 미국 BLA를 2026년 9월 말 제출할 계획이다.",
+      "source": "20260623_Report.md",
+      "origin": "report"
+    },
+    {
       "ticker": "NVO",
       "date": "2026-09-15",
       "title": "Wegovy 7.2mg high-dose EU launch",
@@ -576,6 +765,15 @@
       "note": "AMT-130 헌팅턴 유전자치료의 영국 MHRA MAA 제출이 3분기로 계획돼 있다.",
       "origin": "report",
       "source": "20260520_Report.md"
+    },
+    {
+      "ticker": "QURE",
+      "date": "2026-09-15",
+      "title": "AMT-130 Huntington accelerated approval BLA submission",
+      "stage": "regulatory",
+      "note": "FDA가 3년 데이터를 가속승인 근거로 수용하기로 해 AMT-130의 미국 BLA를 2026년 3분기 제출할 계획이다.",
+      "source": "20260618_Report.md",
+      "origin": "report"
     },
     {
       "ticker": "VERA",
