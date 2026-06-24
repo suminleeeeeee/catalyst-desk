@@ -19,10 +19,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch prices from Twelve Data
+      - name: Fetch prices from Toss Securities
         env:
-          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+          TOSS_CLIENT_ID: ${{ secrets.TOSS_CLIENT_ID }}
+          TOSS_CLIENT_SECRET: ${{ secrets.TOSS_CLIENT_SECRET }}
         run: python scripts/fetch_prices.py
+        continue-on-error: true   # 키 미설정/시세 실패해도 임상·IR 수집은 진행
 
       - name: Fetch trials from ClinicalTrials.gov
         run: python scripts/fetch_trials.py
