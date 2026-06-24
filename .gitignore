@@ -1,0 +1,22 @@
+# 토스 시크릿 — 절대 커밋 금지
+.env
+
+# 개인 포트폴리오 — 로컬 전용, 공개 repo에 올라가면 안 됨
+data/holdings.json
+
+# 잡파일
+.DS_Store
+__pycache__/
+*.pyc
+
+# 개인 런처(로컬 경로 포함)
+대시보드 켜기.command
+
+# 로컬 전용 포트폴리오 대시보드 (토스 보유내역 포함)
+index.local.html
+
+# 개인 포트폴리오 수집기 (토스 계좌 조회)
+scripts/fetch_toss_holdings.py
+
+# 토스 설정 템플릿 (로컬 전용 — 공개 footprint 최소화)
+.env.example
