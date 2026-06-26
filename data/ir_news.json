@@ -1,7 +1,18 @@
 {
-  "updated": "2026-06-25T23:52:08+00:00",
+  "updated": "2026-06-26T23:43:29+00:00",
   "source": "Company IR RSS feeds (keyword-filtered, accumulated)",
   "news": [
+    {
+      "ticker": "LLY",
+      "date": "2026-06-26",
+      "title": "Lilly's Jaypirca (pirtobrutinib) recommended by CHMP for approval in the European Union for adults with chronic lymphocytic leukemia (CLL) across all lines of therapy",
+      "summary": "The positive opinion is based on results from the Phase 3 BRUIN CLL-313 and BRUIN CLL-314 trials, previously presented at the 2025 American Society of Hematology Annual Meeting and published in The Journal of Clinical Oncology BRUIN CLL-313 is the first Phase 3 study to evaluate a",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-jaypirca-pirtobrutinib-recommended-chmp-approval-0",
+      "keywords": [
+        "phase 3",
+        "results from"
+      ]
+    },
     {
       "ticker": "RVMD",
       "date": "2026-06-23",
